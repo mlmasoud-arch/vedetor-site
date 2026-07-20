@@ -1,137 +1,386 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vedetor — Privacy Policy / سیاست حریم خصوصی</title>
+<title>Vedetor — Peace of mind, not surveillance</title>
+<meta name="description" content="Vedetor is a transparent monitoring app for parents, organizations and managers — live location, full remote control, and it keeps working even without internet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #0A0E14;
-    color: #C8D0DC;
-    line-height: 1.8;
-    padding: 24px;
-    max-width: 760px;
-    margin: 0 auto;
+  :root{
+    --bg-0:#0a0e14; --bg-1:#0f141d; --bg-2:#141a24;
+    --surface:#161c26; --surface-2:#1e2530; --line:#2a3344;
+    --gold:#f4c44e; --gold-deep:#d97706; --gold-dim:#f4c44e22;
+    --blue:#3b5bdb;
+    --text-0:#f4f1ea; --text-1:#8899aa; --text-2:#4a5568;
+    --danger:#e11d48; --green:#22c55e;
+    --radius:20px;
+    --f-display:'Space Grotesk', sans-serif;
+    --f-body:'Inter', sans-serif;
   }
-  h1 { color: #F4C44E; font-size: 28px; margin-bottom: 8px; }
-  h2 { color: #F4C44E; font-size: 18px; margin-top: 32px; margin-bottom: 12px; border-bottom: 1px solid #2A3344; padding-bottom: 8px; }
-  p { margin-bottom: 12px; }
-  ul { margin: 12px 0 12px 24px; }
-  li { margin-bottom: 8px; }
-  .subtitle { color: #8899AA; font-size: 14px; margin-bottom: 32px; }
-  .highlight { background: #161C26; border-left: 3px solid #F4C44E; padding: 16px; border-radius: 8px; margin: 16px 0; }
-  .en { direction: ltr; text-align: left; background: #111822; padding: 24px; border-radius: 12px; margin-top: 48px; }
-  .en h2 { color: #F4C44E; }
-  a { color: #F4C44E; }
-  .updated { color: #556; font-size: 12px; margin-top: 48px; }
+  html[lang="fa"]{ --f-display:'Vazirmatn', sans-serif; --f-body:'Vazirmatn', sans-serif; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg-0); color:var(--text-0); font-family:var(--f-body); line-height:1.7; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:var(--f-display);}
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse 900px 520px at 82% -8%, #f4c44e18, transparent 60%),
+      radial-gradient(ellipse 700px 480px at -8% 30%, #3b5bdb14, transparent 60%);
+  }
+
+  nav{position:sticky; top:0; z-index:60; backdrop-filter:blur(14px); background:#0a0e14cc; border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:74px;}
+  .logo{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.2rem; font-family:var(--f-display);}
+  .logo-mark{width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg, var(--gold), var(--gold-deep)); box-shadow:0 0 22px #f4c44e55; position:relative;}
+  .logo-mark::after{content:""; position:absolute; inset:7px; border:2px solid var(--bg-0); border-radius:5px;}
+  .nav-links{display:flex; gap:30px; font-size:.92rem; color:var(--text-1);}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .lang-switch{display:flex; background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:3px;}
+  .lang-switch button{
+    border:0; background:transparent; color:var(--text-1); font-family:var(--f-body);
+    font-size:.78rem; padding:6px 13px; border-radius:100px; cursor:pointer; font-weight:600;
+  }
+  .lang-switch button.active{background:var(--gold); color:#241a04;}
+  .nav-cta{background:var(--text-0); color:var(--bg-0); padding:10px 20px; border-radius:100px; font-weight:600; font-size:.88rem;}
+
+  .hero{position:relative; z-index:1; padding:88px 0 64px;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--f-body); font-weight:600;
+    font-size:.76rem; letter-spacing:.03em; color:var(--gold); background:var(--gold-dim);
+    border:1px solid #f4c44e40; padding:6px 14px; border-radius:100px; margin-bottom:24px; text-transform:uppercase;
+  }
+  html[lang="fa"] .eyebrow{text-transform:none;}
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 8px var(--gold); animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.3;}}
+  h1{font-size:clamp(2.1rem,4.2vw,3.3rem); font-weight:700; line-height:1.22; letter-spacing:-.01em; margin-bottom:22px;}
+  h1 em{font-style:normal; color:var(--gold);}
+  .hero p.lead{font-size:1.06rem; color:var(--text-1); max-width:50ch; margin-bottom:32px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:22px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:12px; font-weight:600; font-size:.94rem; transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:linear-gradient(135deg, var(--gold), var(--gold-deep)); color:#241a04; box-shadow:0 12px 30px -12px #f4c44e88;}
+  .btn-ghost{background:var(--surface); border:1px solid var(--line); color:var(--text-0);}
+  .btn-ghost:hover{border-color:var(--gold);}
+  .store-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .store-chip{display:flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); padding:9px 14px; border-radius:10px; font-size:.8rem; color:var(--text-1);}
+
+  .scene{position:relative; height:420px; display:flex; align-items:center; justify-content:center;}
+  .orbit-ring{
+    position:absolute; width:340px; height:340px; border-radius:50%;
+    border:1px dashed #f4c44e2a; animation:spin 40s linear infinite;
+  }
+  .orbit-ring.r2{width:420px; height:420px; border-color:#3b5bdb22; animation-duration:60s; animation-direction:reverse;}
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .phone{
+    position:relative; width:190px; height:380px; border-radius:36px;
+    background:linear-gradient(160deg, var(--surface-2), var(--bg-1));
+    border:1px solid var(--line); box-shadow:0 40px 90px -30px #000000b0;
+    padding:14px; z-index:2;
+  }
+  .phone-screen{
+    height:100%; border-radius:24px; background:var(--bg-0); border:1px solid var(--line);
+    padding:18px 14px; display:flex; flex-direction:column; gap:10px;
+  }
+  .phone-map{
+    height:110px; border-radius:14px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(circle at 60% 40%, #f4c44e2a, transparent 55%),
+      repeating-linear-gradient(0deg, #ffffff08 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(90deg, #ffffff08 0 1px, transparent 1px 22px),
+      var(--bg-2);
+  }
+  .phone-map .ping{position:absolute; top:35%; right:35%; width:10px; height:10px; border-radius:50%; background:var(--gold); animation:ping 2.2s infinite;}
+  @keyframes ping{0%{box-shadow:0 0 0 0 #f4c44e99;} 70%{box-shadow:0 0 0 18px #f4c44e00;} 100%{box-shadow:0 0 0 0 #f4c44e00;}}
+  .phone-row{display:flex; justify-content:space-between; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:8px 10px; font-size:.62rem; color:var(--text-1); font-family:var(--f-body);}
+  .phone-row b{color:var(--gold); font-weight:700;}
+  .badge-shield{
+    position:absolute; top:-18px; left:-22px; width:64px; height:64px; border-radius:18px; z-index:3;
+    background:linear-gradient(135deg, var(--gold), var(--gold-deep));
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem;
+    box-shadow:0 14px 30px -8px #f4c44e77; animation:float 4.5s ease-in-out infinite;
+  }
+  .badge-float{
+    position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:9px 13px; font-size:.72rem; color:var(--text-1); display:flex; align-items:center; gap:7px;
+    box-shadow:0 20px 40px -20px #000; animation:float 5s ease-in-out infinite;
+  }
+  .badge-float b{color:var(--text-0);}
+  .badge-1{bottom:40px; right:-30px; animation-delay:.4s;}
+  .badge-2{top:70px; right:-52px; animation-delay:1.2s;}
+  @keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
+  .dotpulse{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 6px var(--green); display:inline-block;}
+
+  .section{position:relative; z-index:1; padding:92px 0;}
+  .section-head{max-width:660px; margin:0 auto 52px; text-align:center;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.3rem); font-weight:700; margin-bottom:16px;}
+  .section-head p{color:var(--text-1); font-size:1.02rem;}
+
+  .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .feature-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px; transition:border-color .2s, transform .2s;}
+  .feature-card:hover{border-color:#f4c44e66; transform:translateY(-3px);}
+  .feature-icon{width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:16px; font-size:1.35rem;}
+  .feature-card h3{font-size:1.05rem; font-weight:700; margin-bottom:10px;}
+  .feature-card p{color:var(--text-1); font-size:.9rem;}
+
+  .audience-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .audience-card{background:linear-gradient(160deg, var(--surface), var(--bg-1)); border:1px solid var(--line); border-radius:var(--radius); padding:34px;}
+  .audience-card .tag{font-family:var(--f-body); font-weight:600; font-size:.74rem; color:var(--blue); margin-bottom:10px; display:block; text-transform:uppercase; letter-spacing:.03em;}
+  html[lang="fa"] .audience-card .tag{text-transform:none;}
+  .audience-card h3{font-size:1.25rem; font-weight:700; margin-bottom:12px;}
+  .audience-card p{color:var(--text-1); font-size:.94rem;}
+
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; counter-reset:step;}
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px; position:relative;}
+  .step-num{font-family:var(--f-display); font-weight:700; font-size:2rem; -webkit-text-stroke:1.5px #f4c44e77; color:transparent; margin-bottom:14px;}
+  .step h3{font-size:.98rem; font-weight:700; margin-bottom:8px;}
+  .step p{color:var(--text-1); font-size:.85rem;}
+
+  .cta-band{background:linear-gradient(135deg, #3a2c0d, #0d1a3a); border:1px solid var(--line); border-radius:28px; padding:58px 40px; text-align:center; position:relative; overflow:hidden;}
+  .cta-band::before{content:""; position:absolute; inset:-40%; background:radial-gradient(circle, #f4c44e22, transparent 60%);}
+  .cta-band h2{position:relative; font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px;}
+  .cta-band p{position:relative; color:var(--text-1); margin-bottom:26px;}
+  .cta-band .cta-row{justify-content:center; position:relative;}
+
+  footer{border-top:1px solid var(--line); padding:44px 0; position:relative; z-index:1;}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-links{display:flex; gap:22px; font-size:.85rem; color:var(--text-1);}
+  .footer-links a:hover{color:var(--gold);}
+  .foot-note{font-size:.78rem; color:var(--text-2); font-family:var(--f-body);}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;} .scene{height:340px;}
+    .feature-grid{grid-template-columns:1fr 1fr;} .audience-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;} .nav-links{display:none;}
+  }
+  @media (max-width:560px){
+    .feature-grid, .steps{grid-template-columns:1fr;}
+    nav .wrap{height:64px;} .hero{padding:52px 0 40px;}
+  }
 </style>
 </head>
 <body>
 
-<h1>سیاست حریم خصوصی — Vedetor</h1>
-<p class="subtitle">آخرین به‌روزرسانی: ژوئن ۲۰۲۵ | Last updated: June 2025</p>
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="logo-mark"></span> Vedetor</div>
+    <div class="nav-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#audience" data-i18n="nav.audience">Who it's for</a>
+      <a href="#tutorial" data-i18n="nav.tutorial">Getting started</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" id="lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="fa">فا</button>
+      </div>
+      <a href="pricing.html" class="nav-cta" data-i18n="nav.cta">Get started</a>
+    </div>
+  </div>
+</nav>
 
-<div class="highlight">
-  ⚠️ <strong>شفافیت کامل:</strong> Vedetor یک برنامه نظارت بر دستگاه است.
-  دستگاه تحت نظارت از طریق صفحه رضایت از وضعیت مطلع می‌شود.
-  این برنامه برای استفاده مخفیانه (Stalkerware) طراحی نشده و نخواهد شد.
-</div>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Now available on Play, Bazaar &amp; direct download</span></div>
+      <h1 data-i18n-html="hero.title">Peace of mind,<br><em>not surveillance.</em></h1>
+      <p class="lead" data-i18n="hero.lead">Vedetor is a transparent monitoring app for parents, organizations and managers — live location, full remote control, and it keeps working even when the internet doesn't.</p>
+      <div class="cta-row">
+        <a href="pricing.html" class="btn btn-primary" data-i18n="hero.cta1">Start for free →</a>
+        <a href="#features" class="btn btn-ghost" data-i18n="hero.cta2">See how it works</a>
+      </div>
+      <div class="store-row">
+        <span class="store-chip">▶ Google Play</span>
+        <span class="store-chip">🛍 Cafe Bazaar</span>
+        <span class="store-chip">⬇ <span data-i18n="hero.direct">Direct APK</span></span>
+      </div>
+    </div>
 
-<h2>۱. چه اطلاعاتی جمع‌آوری می‌شود؟</h2>
-<ul>
-  <li><strong>موقعیت مکانی:</strong> طول و عرض جغرافیایی دستگاه کودک/کارمند</li>
-  <li><strong>وضعیت دستگاه:</strong> سطح باتری، وضعیت اینترنت، تنظیمات صدا، GPS</li>
-  <li><strong>شماره تلفن:</strong> شماره والد/سرپرست برای ارسال SMS</li>
-  <li><strong>شناسه دستگاه:</strong> یک ID منحصربه‌فرد (بدون اطلاعات شخصی) برای شناسایی در Firebase</li>
-</ul>
+    <div class="scene">
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="phone">
+        <div class="badge-shield">🛡️</div>
+        <div class="phone-screen">
+          <div class="phone-map"><span class="ping"></span></div>
+          <div class="phone-row"><span data-i18n="hero.status">Status</span> <b><span class="dotpulse"></span> <span data-i18n="hero.online">Online</span></b></div>
+          <div class="phone-row"><span data-i18n="hero.battery">Battery</span> <b>84%</b></div>
+          <div class="phone-row"><span data-i18n="hero.lastCmd">Last command</span> <b>location:sync</b></div>
+        </div>
+        <div class="badge-float badge-1">📍 <b data-i18n="hero.badgeLive">Live location</b></div>
+        <div class="badge-float badge-2">🆘 <b data-i18n="hero.badgeSos">SOS ready</b></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<h2>۲. چه اطلاعاتی جمع‌آوری نمی‌شود؟</h2>
-<ul>
-  <li>پیام‌های متنی یا تماس‌های تلفنی</li>
-  <li>عکس‌ها یا فایل‌های شخصی</li>
-  <li>رمزهای عبور یا اطلاعات حساب‌های کاربری</li>
-  <li>تاریخچه مرورگر یا برنامه‌های نصب‌شده</li>
-</ul>
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="features.eyebrow">Features</span>
+      <h2 data-i18n="features.title">Everything you need for real peace of mind</h2>
+      <p data-i18n="features.sub">Not a hidden spy tool — a monitoring system that is both transparent and dependable.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card"><div class="feature-icon">📍</div><h3 data-i18n="f1.title">Live location</h3><p data-i18n="f1.body">See the exact coordinates at any moment, with a full route history that updates live — never a stale, hours-old pin.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎛️</div><h3 data-i18n="f2.title">Full remote control</h3><p data-i18n="f2.body">Lock, wipe, adjust volume, or toggle GPS — all without ever touching the monitored device again.</p></div>
+      <div class="feature-card"><div class="feature-icon">✉️</div><h3 data-i18n="f3.title">Works without internet</h3><p data-i18n="f3.body">If the device's data connection drops, two-way SMS keeps every command and location update flowing.</p></div>
+      <div class="feature-card"><div class="feature-icon">🆘</div><h3 data-i18n="f4.title">Emergency SOS</h3><p data-i18n="f4.body">One button sends an instant location and alert to the guardian — built for the moments that matter most.</p></div>
+      <div class="feature-card"><div class="feature-icon">🛡️</div><h3 data-i18n="f5.title">Transparent, never hidden</h3><p data-i18n="f5.body">The monitored device always knows monitoring is active. Your data is never sold or shared with anyone.</p></div>
+      <div class="feature-card"><div class="feature-icon">🇮🇷</div><h3 data-i18n="f6.title">Domestic server option</h3><p data-i18n="f6.body">For users inside Iran, an in-country infrastructure option means no VPN is ever required.</p></div>
+    </div>
+  </div>
+</section>
 
-<h2>۳. اطلاعات چگونه استفاده می‌شود؟</h2>
-<p>اطلاعات جمع‌آوری‌شده <strong>فقط</strong> برای نمایش به والد/سرپرست مشخص‌شده توسط کاربر استفاده می‌شود.
-هیچ داده‌ای به اشخاص ثالث فروخته یا منتقل نمی‌شود.</p>
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="audience.eyebrow">Who it's for</span>
+      <h2 data-i18n="audience.title">One tool, two very different days</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <span class="tag" data-i18n="aud1.tag">For parents</span>
+        <h3 data-i18n="aud1.title">Daily peace of mind</h3>
+        <p data-i18n="aud1.body">Know where your child is and that their phone is safe, without calling every twenty minutes. Setup takes a few minutes — no technical background required.</p>
+      </div>
+      <div class="audience-card">
+        <span class="tag" data-i18n="aud2.tag">For organizations &amp; managers</span>
+        <h3 data-i18n="aud2.title">Managing a fleet of devices</h3>
+        <p data-i18n="aud2.body">From company vehicles to work phones, get one dashboard for every device you're responsible for, with annual billing that scales to your headcount.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>۴. ذخیره‌سازی اطلاعات</h2>
-<p>اطلاعات از طریق <strong>Firebase Realtime Database</strong> (سرویس Google) و به‌صورت رمزنگاری‌شده ذخیره می‌شود.
-تاریخچه موقعیت تا ۴۸ ساعت روی دستگاه نگه داشته می‌شود و سپس حذف می‌گردد.</p>
+<section class="section" id="tutorial">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="tut.eyebrow">Getting started</span>
+      <h2 data-i18n="tut.title">New to Vedetor? Here's the whole setup</h2>
+      <p data-i18n="tut.sub">No technical knowledge needed — most people finish in under five minutes.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><h3 data-i18n="s1.title">Download the app</h3><p data-i18n="s1.body">Install Vedetor on both phones — yours and the one you'll monitor — from Google Play, Cafe Bazaar, or the direct download link.</p></div>
+      <div class="step"><div class="step-num">02</div><h3 data-i18n="s2.title">Choose a role</h3><p data-i18n="s2.body">On your own phone pick "Guardian." On the other phone, pick "Monitored device" and accept the on-screen consent notice.</p></div>
+      <div class="step"><div class="step-num">03</div><h3 data-i18n="s3.title">Pair the devices</h3><p data-i18n="s3.body">Enter the monitored device's ID (shown on its screen) into your Guardian app. The connection is instant.</p></div>
+      <div class="step"><div class="step-num">04</div><h3 data-i18n="s4.title">You're set</h3><p data-i18n="s4.body">Location, status and controls now appear on your dashboard. Upgrade any time for live tracking and remote commands.</p></div>
+    </div>
+  </div>
+</section>
 
-<h2>۵. دسترسی به اطلاعات</h2>
-<p>فقط والد/سرپرستی که برنامه را نصب کرده و شناسه دستگاه را دارد، می‌تواند به اطلاعات دسترسی داشته باشد.
-Vedetor به اطلاعات کاربران دسترسی ندارد.</p>
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 data-i18n="cta.title">Start today</h2>
+      <p data-i18n="cta.body">The free plan is always available. Upgrade whenever you need the full toolkit.</p>
+      <div class="cta-row"><a href="pricing.html" class="btn btn-primary" data-i18n="cta.button">See pricing →</a></div>
+    </div>
+  </div>
+</section>
 
-<h2>۶. رضایت آگاهانه</h2>
-<div class="highlight">
-  قبل از شروع نظارت، یک صفحه رضایت به کاربر دستگاه نمایش داده می‌شود که:
-  <ul style="margin-top:8px">
-    <li>مشخص می‌کند چه کسی نظارت می‌کند</li>
-    <li>اعلام می‌کند چه اطلاعاتی جمع‌آوری می‌شود</li>
-    <li>لینک این سیاست حریم خصوصی را نمایش می‌دهد</li>
-  </ul>
-</div>
+<footer>
+  <div class="wrap footer-row">
+    <div class="logo"><span class="logo-mark"></span> Vedetor</div>
+    <div class="footer-links">
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+      <a href="mailto:support@vedetor.com" data-i18n="nav.contact">Contact us</a>
+    </div>
+    <div class="foot-note">© 2026 Vedetor</div>
+  </div>
+</footer>
 
-<h2>۷. حذف اطلاعات</h2>
-<p>برای حذف تمام اطلاعات، کافی است برنامه را از هر دو دستگاه حذف کنید.
-اطلاعات Firebase پس از ۳۰ روز عدم فعالیت به‌طور خودکار پاک می‌شود.</p>
+<script>
+const translations = {
+  en: {
+    "nav.features":"Features","nav.audience":"Who it's for","nav.tutorial":"Getting started","nav.pricing":"Pricing","nav.privacy":"Privacy","nav.contact":"Contact us","nav.cta":"Get started",
+    "hero.eyebrow":"Now available on Play, Bazaar &amp; direct download",
+    "hero.title":"Peace of mind,<br><em>not surveillance.</em>",
+    "hero.lead":"Vedetor is a transparent monitoring app for parents, organizations and managers — live location, full remote control, and it keeps working even when the internet doesn't.",
+    "hero.cta1":"Start for free →","hero.cta2":"See how it works","hero.direct":"Direct APK",
+    "hero.status":"Status","hero.online":"Online","hero.battery":"Battery","hero.lastCmd":"Last command",
+    "hero.badgeLive":"Live location","hero.badgeSos":"SOS ready",
+    "features.eyebrow":"Features","features.title":"Everything you need for real peace of mind",
+    "features.sub":"Not a hidden spy tool — a monitoring system that is both transparent and dependable.",
+    "f1.title":"Live location","f1.body":"See the exact coordinates at any moment, with a full route history that updates live — never a stale, hours-old pin.",
+    "f2.title":"Full remote control","f2.body":"Lock, wipe, adjust volume, or toggle GPS — all without ever touching the monitored device again.",
+    "f3.title":"Works without internet","f3.body":"If the device's data connection drops, two-way SMS keeps every command and location update flowing.",
+    "f4.title":"Emergency SOS","f4.body":"One button sends an instant location and alert to the guardian — built for the moments that matter most.",
+    "f5.title":"Transparent, never hidden","f5.body":"The monitored device always knows monitoring is active. Your data is never sold or shared with anyone.",
+    "f6.title":"Domestic server option","f6.body":"For users inside Iran, an in-country infrastructure option means no VPN is ever required.",
+    "audience.eyebrow":"Who it's for","audience.title":"One tool, two very different days",
+    "aud1.tag":"For parents","aud1.title":"Daily peace of mind","aud1.body":"Know where your child is and that their phone is safe, without calling every twenty minutes. Setup takes a few minutes — no technical background required.",
+    "aud2.tag":"For organizations & managers","aud2.title":"Managing a fleet of devices","aud2.body":"From company vehicles to work phones, get one dashboard for every device you're responsible for, with annual billing that scales to your headcount.",
+    "tut.eyebrow":"Getting started","tut.title":"New to Vedetor? Here's the whole setup","tut.sub":"No technical knowledge needed — most people finish in under five minutes.",
+    "s1.title":"Download the app","s1.body":"Install Vedetor on both phones — yours and the one you'll monitor — from Google Play, Cafe Bazaar, or the direct download link.",
+    "s2.title":"Choose a role","s2.body":"On your own phone pick \"Guardian.\" On the other phone, pick \"Monitored device\" and accept the on-screen consent notice.",
+    "s3.title":"Pair the devices","s3.body":"Enter the monitored device's ID (shown on its screen) into your Guardian app. The connection is instant.",
+    "s4.title":"You're set","s4.body":"Location, status and controls now appear on your dashboard. Upgrade any time for live tracking and remote commands.",
+    "cta.title":"Start today","cta.body":"The free plan is always available. Upgrade whenever you need the full toolkit.","cta.button":"See pricing →"
+  },
+  fa: {
+    "nav.features":"ویژگی‌ها","nav.audience":"برای چه کسانی","nav.tutorial":"شروع کار","nav.pricing":"قیمت‌گذاری","nav.privacy":"حریم خصوصی","nav.contact":"تماس با ما","nav.cta":"شروع کنید",
+    "hero.eyebrow":"حالا در کافه‌بازار، گوگل‌پلی و دانلود مستقیم",
+    "hero.title":"خیالتون راحت باشه،<br><em>بدون این‌که حس کنترل بدید.</em>",
+    "hero.lead":"Vedetor یک برنامه‌ی نظارت شفاف برای والدین، سازمان‌ها و مدیران است — موقعیت لحظه‌ای، کنترل کامل از راه دور، و کارکرد حتی وقتی اینترنت قطع می‌شود.",
+    "hero.cta1":"شروع رایگان ←","hero.cta2":"دیدن ویژگی‌ها","hero.direct":"دانلود مستقیم",
+    "hero.status":"وضعیت","hero.online":"آنلاین","hero.battery":"باتری","hero.lastCmd":"آخرین دستور",
+    "hero.badgeLive":"موقعیت زنده","hero.badgeSos":"SOS آماده",
+    "features.eyebrow":"ویژگی‌ها","features.title":"هرچی برای خیالِ راحت لازمه",
+    "features.sub":"نه یک ابزار جاسوسی مخفی — یک سیستم نظارتی شفاف و قابل‌اعتماد.",
+    "f1.title":"موقعیت لحظه‌ای","f1.body":"مختصات دقیق در هر لحظه، با تاریخچه‌ی کامل مسیر که به‌صورت زنده به‌روزرسانی می‌شود.",
+    "f2.title":"کنترل کامل از راه دور","f2.body":"قفل، پاک‌سازی، کنترل صدا یا GPS — بدون نیاز به دسترسی فیزیکی به دستگاه.",
+    "f3.title":"کارکرد بدون اینترنت","f3.body":"وقتی اینترنت دستگاه قطعه، پیامک دوطرفه همه‌ی دستورات و موقعیت‌ها رو جاری نگه می‌داره.",
+    "f4.title":"SOS اضطراری","f4.body":"یک دکمه، موقعیت و هشدار فوری برای سرپرست می‌فرسته — دقیقاً برای لحظاتی که مهم‌ترن.",
+    "f5.title":"شفاف، نه مخفی","f5.body":"دستگاه زیرنظر همیشه از فعال‌بودن نظارت آگاهه. داده‌هاتون هرگز فروخته یا به اشتراک گذاشته نمی‌شه.",
+    "f6.title":"سرور داخلی","f6.body":"برای کاربران داخل ایران، گزینه‌ی زیرساخت داخلی یعنی دیگه هیچ‌وقت نیازی به VPN نیست.",
+    "audience.eyebrow":"برای چه کسانی","audience.title":"یک ابزار، دو دنیای متفاوت",
+    "aud1.tag":"برای والدین","aud1.title":"خیال راحت روزانه","aud1.body":"بدونید فرزندتون کجاست و گوشیش سالمه، بدون این‌که هر بیست دقیقه زنگ بزنید. نصب چند دقیقه‌ست — نیازی به دانش فنی نیست.",
+    "aud2.tag":"برای سازمان‌ها و مدیران","aud2.title":"مدیریت ناوگان دستگاه‌ها","aud2.body":"از خودروهای سازمانی تا گوشی‌های کاری — یک داشبورد برای هر دستگاهی که مسئولشی، با صورت‌حساب سالانه‌ی متناسب با تعدادتون.",
+    "tut.eyebrow":"شروع کار","tut.title":"تازه واردی؟ کل مراحل راه‌اندازی اینجاست","tut.sub":"نیازی به دانش فنی نیست — اکثر افراد کمتر از پنج دقیقه تمومش می‌کنن.",
+    "s1.title":"نصب برنامه","s1.body":"Vedetor رو روی هر دو گوشی نصب کن — گوشی خودت و گوشی‌ای که می‌خوای زیرنظر بگیری — از گوگل‌پلی، کافه‌بازار یا لینک دانلود مستقیم.",
+    "s2.title":"انتخاب نقش","s2.body":"توی گوشی خودت «سرپرست» رو انتخاب کن. توی گوشی دیگه، «دستگاه زیرنظر» رو انتخاب و رضایت‌نامه‌ی روی صفحه رو تایید کن.",
+    "s3.title":"جفت‌سازی دستگاه‌ها","s3.body":"شناسه‌ی دستگاه زیرنظر (که روی صفحه‌ش نشون داده می‌شه) رو توی اپ سرپرستی وارد کن. اتصال آنیه.",
+    "s4.title":"تمومه","s4.body":"موقعیت، وضعیت و کنترل‌ها الان توی داشبوردت نشون داده می‌شن. هر وقت خواستی برای ردیابی زنده و دستورات از راه دور ارتقا بده.",
+    "cta.title":"همین امروز شروع کن","cta.body":"پلن رایگان همیشه در دسترسه. هر وقت خواستی به مجموعه‌ی کامل ابزارها ارتقا بده.","cta.button":"دیدن قیمت‌ها ←"
+  }
+};
 
-<h2>۸. تماس</h2>
-<p>برای سوالات مرتبط با حریم خصوصی: <a href="mailto:privacy@vedetor.com">privacy@vedetor.com</a></p>
+function applyLang(lang){
+  document.getElementById('html-root').setAttribute('lang', lang);
+  document.getElementById('html-root').setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) el.textContent = translations[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (translations[lang][key]) el.innerHTML = translations[lang][key];
+  });
+  document.querySelectorAll('#lang-switch button').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  localStorage.setItem('vedetor_lang', lang);
+}
 
-<!-- English Version -->
-<div class="en">
-<h1 style="color:#F4C44E;margin-bottom:8px">Privacy Policy — Vedetor</h1>
-<p style="color:#667;margin-bottom:24px">Last updated: June 2025</p>
+document.querySelectorAll('#lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
 
-<div class="highlight">
-  ⚠️ <strong>Full Transparency:</strong> Vedetor is a device monitoring application.
-  The monitored device is notified via a consent screen before monitoring begins.
-  This app is NOT designed for covert surveillance (stalkerware).
-</div>
-
-<h2>1. What We Collect</h2>
-<ul>
-  <li><strong>Location data:</strong> GPS coordinates of the monitored device</li>
-  <li><strong>Device status:</strong> Battery level, internet connectivity, volume settings, GPS state</li>
-  <li><strong>Phone number:</strong> Guardian's number for SMS commands</li>
-  <li><strong>Device ID:</strong> A unique anonymous identifier for Firebase sync</li>
-</ul>
-
-<h2>2. What We Do NOT Collect</h2>
-<ul>
-  <li>Text messages or call logs</li>
-  <li>Personal photos or files</li>
-  <li>Passwords or account credentials</li>
-  <li>Browser history or installed apps</li>
-</ul>
-
-<h2>3. How Data Is Used</h2>
-<p>All collected data is used <strong>solely</strong> to display information to the designated guardian.
-No data is sold or transferred to third parties.</p>
-
-<h2>4. Data Storage</h2>
-<p>Data is stored via <strong>Firebase Realtime Database</strong> (Google service) with encryption.
-Location history is retained for 48 hours on-device, then automatically deleted.</p>
-
-<h2>5. Informed Consent</h2>
-<p>Before monitoring begins, a consent screen is displayed to the device user showing who is monitoring,
-what data is collected, and a link to this privacy policy.</p>
-
-<h2>6. Data Deletion</h2>
-<p>Uninstalling the app from both devices removes all associated data.
-Firebase data is automatically purged after 30 days of inactivity.</p>
-
-<h2>7. Contact</h2>
-<p>Privacy inquiries: <a href="mailto:privacy@vedetor.com">privacy@vedetor.com</a></p>
-</div>
-
-<p class="updated">Vedetor v1.0 — vedetor.com</p>
+const savedLang = localStorage.getItem('vedetor_lang');
+if (savedLang === 'fa') applyLang('fa');
+</script>
 
 </body>
 </html>
