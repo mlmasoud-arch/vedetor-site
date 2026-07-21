@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Vedetor</title>
+<meta name="description" content="Vedetor plans: Free, Personal and Business — simple, transparent, no hidden fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-0:#0a0e14; --bg-1:#0f141d; --bg-2:#141a24;
+  --surface:#161c26; --surface-2:#1e2530; --line:#2a3344;
+  --gold:#f4c44e; --gold-deep:#d97706; --gold-dim:#f4c44e22;
+  --blue:#3b5bdb; --green:#22c55e; --danger:#e11d48;
+  --text-0:#f4f1ea; --text-1:#8899aa; --text-2:#4a5568;
+  --radius:20px;
+  --f-display:'Space Grotesk', sans-serif;
+  --f-body:'Inter', sans-serif;
+}
+html[lang="fa"], html[lang="ar"]{ --f-display:'Vazirmatn', sans-serif; --f-body:'Vazirmatn', sans-serif; }
+html[lang="ar"] body{ font-family:'Vazirmatn','Noto Sans Arabic',sans-serif; }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg-0); color:var(--text-0); font-family:var(--f-body); line-height:1.7; overflow-x:hidden;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+h1,h2,h3{font-family:var(--f-display);}
+img{max-width:100%; display:block;}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 900px 520px at 82% -8%, #f4c44e18, transparent 60%),
+    radial-gradient(ellipse 700px 480px at -8% 30%, #3b5bdb14, transparent 60%);
+}
+nav{position:sticky; top:0; z-index:60; backdrop-filter:blur(14px); background:#0a0e14cc; border-bottom:1px solid var(--line);}
+nav .wrap{display:flex; align-items:center; justify-content:space-between; height:74px;}
+.logo{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.2rem; font-family:var(--f-display);}
+.nav-links{display:flex; gap:28px; font-size:.92rem; color:var(--text-1);}
+.nav-links a:hover{color:var(--gold);}
+.nav-right{display:flex; align-items:center; gap:12px;}
+.lang-switch{position:relative;}
+.lang-btn{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--line); border-radius:100px; padding:8px 14px; font-size:.8rem; color:var(--text-0); cursor:pointer; font-family:var(--f-body); font-weight:600;}
+.lang-menu{position:absolute; top:calc(100% + 8px); inset-inline-end:0; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:6px; min-width:150px; box-shadow:0 20px 50px -20px #000; display:none; z-index:70;}
+.lang-menu.open{display:block;}
+.lang-menu button{display:flex; width:100%; align-items:center; justify-content:space-between; background:transparent; border:0; color:var(--text-1); padding:9px 10px; border-radius:9px; font-size:.85rem; cursor:pointer; font-family:var(--f-body); text-align:start;}
+.lang-menu button:hover{background:var(--bg-1); color:var(--text-0);}
+.lang-menu button.active{color:var(--gold);}
+.nav-cta{background:var(--text-0); color:var(--bg-0); padding:10px 20px; border-radius:100px; font-weight:600; font-size:.88rem;}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:.76rem; letter-spacing:.03em; color:var(--gold); background:var(--gold-dim); border:1px solid #f4c44e40; padding:6px 14px; border-radius:100px; margin-bottom:24px;}
+.eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 8px var(--gold); animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.3;}}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:12px; font-weight:600; font-size:.94rem; transition:transform .15s ease; cursor:pointer; border:none; font-family:var(--f-body);}
+.btn:hover{transform:translateY(-1px);}
+.btn-primary{background:linear-gradient(135deg, var(--gold), var(--gold-deep)); color:#241a04; box-shadow:0 12px 30px -12px #f4c44e88;}
+.btn-ghost{background:var(--surface); border:1px solid var(--line); color:var(--text-0);}
+.btn-ghost:hover{border-color:var(--gold);}
+.section{position:relative; z-index:1; padding:92px 0;}
+.section-head{max-width:680px; margin:0 auto 52px; text-align:center;}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.3rem); font-weight:700; margin-bottom:16px;}
+.section-head p{color:var(--text-1); font-size:1.02rem;}
+footer{border-top:1px solid var(--line); padding:44px 0; position:relative; z-index:1;}
+.footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+.footer-links{display:flex; gap:22px; font-size:.85rem; color:var(--text-1); flex-wrap:wrap;}
+.footer-links a:hover{color:var(--gold);}
+.foot-note{font-size:.78rem; color:var(--text-2);}
+@media (max-width:920px){ .nav-links{display:none;} }
+
+
+.page-head{position:relative; z-index:1; text-align:center; padding:76px 0 36px;}
+.page-head h1{font-size:clamp(2rem,4vw,2.7rem); font-weight:700; margin-bottom:14px;}
+.page-head p{color:var(--text-1); max-width:54ch; margin:0 auto;}
+.toggle-row{display:flex; justify-content:center; align-items:center; gap:12px; margin:32px 0 8px; position:relative; z-index:1;}
+.toggle{position:relative; width:56px; height:30px; border-radius:100px; background:var(--surface); border:1px solid var(--line); cursor:pointer;}
+.toggle .knob{position:absolute; top:3px; inset-inline-start:3px; width:22px; height:22px; border-radius:50%; background:var(--gold); transition:transform .2s ease;}
+.toggle.on .knob{transform:translateX(26px);}
+html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
+.toggle-label{font-size:.9rem; color:var(--text-1);}
+.toggle-label.active{color:var(--text-0); font-weight:600;}
+.save-badge{font-size:.72rem; font-weight:600; color:var(--gold); background:var(--gold-dim); padding:3px 9px; border-radius:100px;}
+.plans{position:relative; z-index:1; padding:40px 0 100px;}
+.plan-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; align-items:stretch;}
+.plan{background:var(--surface); border:1px solid var(--line); border-radius:24px; padding:32px 28px; display:flex; flex-direction:column;}
+.plan.featured{border-color:#f4c44e88; box-shadow:0 30px 70px -30px #f4c44e33; background:linear-gradient(170deg, #241d0f, var(--surface) 40%); position:relative;}
+.plan.featured .featured-badge{position:absolute; top:-13px; inset-inline-start:28px; background:var(--gold); color:#241a04; font-size:.72rem; font-weight:700; padding:4px 12px; border-radius:100px;}
+.plan-name{font-size:1.1rem; font-weight:700; margin-bottom:6px;}
+.plan-desc{color:var(--text-1); font-size:.86rem; margin-bottom:22px; min-height:40px;}
+.plan-price{font-size:2.1rem; font-weight:700; margin-bottom:4px; font-family:var(--f-display);}
+.plan-price small{font-size:.95rem; color:var(--text-1); font-weight:500; font-family:var(--f-body);}
+.plan-period{color:var(--text-2); font-size:.8rem; margin-bottom:26px;}
+.plan-cta{display:block; text-align:center; padding:13px; border-radius:12px; font-weight:700; font-size:.92rem; margin-bottom:26px; transition:transform .15s ease;}
+.plan-cta:hover{transform:translateY(-1px);}
+.plan-cta.primary{background:linear-gradient(135deg, var(--gold), var(--gold-deep)); color:#241a04;}
+.plan-cta.ghost{background:var(--bg-1); border:1px solid var(--line); color:var(--text-0);}
+.plan-features{list-style:none; display:flex; flex-direction:column; gap:12px; font-size:.87rem; color:var(--text-1); margin-top:auto;}
+.plan-features li{display:flex; align-items:flex-start; gap:10px;}
+.plan-features li .ic{color:var(--gold); flex-shrink:0;}
+.plan-features li.off{color:var(--text-2);}
+.plan-features li.off .ic{color:var(--text-2);}
+.yearly-price, .monthly-price{display:none;}
+.show{display:block;}
+.faq{position:relative; z-index:1; padding:20px 0 100px;}
+.faq .wrap{max-width:760px;}
+.faq h2{font-size:1.5rem; font-weight:700; text-align:center; margin-bottom:40px;}
+.faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
+.faq-item h3{font-size:.98rem; font-weight:700; margin-bottom:8px;}
+.faq-item p{color:var(--text-1); font-size:.88rem;}
+@media (max-width:880px){ .plan-grid{grid-template-columns:1fr; max-width:420px; margin:0 auto;} }
+
+
+.logo-img{width:38px; height:38px; border-radius:11px; box-shadow:0 0 0 0 #f4c44e66; animation:logoGlow 2.6s ease-in-out infinite;}
+@keyframes logoGlow{
+  0%,100%{ box-shadow:0 0 0 0 #f4c44e55, 0 4px 14px -4px #f4c44e88; }
+  50%{ box-shadow:0 0 0 7px #f4c44e00, 0 4px 20px -2px #f4c44eaa; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img">
+ Vedetor</div>
+    <div class="nav-links">
+      <a href="index.html#features" data-i18n="nav.features">Features</a>
+      <a href="index.html#audience" data-i18n="nav.audience">Who it's for</a>
+      <a href="index.html#tutorial" data-i18n="nav.tutorial">Getting started</a>
+      <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" id="lang-btn" onclick="document.getElementById('lang-menu').classList.toggle('open')">🌐 <span id="lang-btn-label">EN</span></button>
+        <div class="lang-menu" id="lang-menu"><button data-lang="en" class="active">EN</button>
+<button data-lang="fa" class="">فارسی</button>
+<button data-lang="ar" class="">العربية</button>
+<button data-lang="tr" class="">Türkçe</button>
+<button data-lang="es" class="">Español</button>
+<button data-lang="zh" class="">中文</button>
+<button data-lang="fr" class="">Français</button></div>
+      </div>
+      <a href="index.html" class="nav-cta" data-i18n="nav.home">Home</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="head.eyebrow">Pricing</span>
+    <h1 data-i18n="head.title">Simple, transparent, no hidden fees</h1>
+    <p data-i18n="head.sub"></p>
+  </div>
+</header>
+
+<div class="toggle-row">
+  <span class="toggle-label active" id="label-monthly" data-i18n="toggle.monthly">Monthly</span>
+  <div class="toggle" id="billing-toggle" onclick="toggleBilling()"><div class="knob"></div></div>
+  <span class="toggle-label" id="label-yearly" data-i18n="toggle.yearly">Yearly</span>
+  <span class="save-badge" data-i18n="toggle.save">2 months free</span>
+</div>
+
+<section class="plans">
+  <div class="wrap plan-grid">
+    <div class="plan">
+      <div class="plan-name" data-i18n="free.name">Free</div>
+      <div class="plan-desc" data-i18n="free.desc"></div>
+      <div class="plan-price">$0</div>
+      <div class="plan-period" data-i18n="free.period">Free forever</div>
+      <a href="#" class="plan-cta ghost" data-i18n="free.cta">Start for free</a>
+      <ul class="plan-features">
+        <li><span class="ic">✓</span> <span data-i18n="free.f1"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="free.f2"></span></li>
+        <li class="off"><span class="ic">–</span> <span data-i18n="free.f3"></span></li>
+        <li class="off"><span class="ic">–</span> <span data-i18n="free.f4"></span></li>
+        <li class="off"><span class="ic">–</span> <span data-i18n="free.f5"></span></li>
+      </ul>
+    </div>
+
+    <div class="plan featured">
+      <span class="featured-badge" data-i18n="badge.popular">Most popular</span>
+      <div class="plan-name" data-i18n="personal.name">Personal</div>
+      <div class="plan-desc" data-i18n="personal.desc"></div>
+      <div class="plan-price monthly-price show">$4.99 <small data-i18n="personal.perMonth">/ month</small></div>
+      <div class="plan-price yearly-price">$3.99 <small data-i18n="personal.perMonth">/ month</small></div>
+      <div class="plan-period"><span data-i18n="personal.billed">Billed</span> <span id="period-text" data-i18n="toggle.monthly">Monthly</span></div>
+      <a href="#" class="plan-cta primary" data-i18n="personal.cta">Upgrade →</a>
+      <ul class="plan-features">
+        <li><span class="ic">✓</span> <span data-i18n="personal.f1"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="personal.f2"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="personal.f3"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="personal.f4"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="personal.f5"></span></li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name" data-i18n="biz.name">Business</div>
+      <div class="plan-desc" data-i18n="biz.desc"></div>
+      <div class="plan-price" data-i18n="biz.price">Contact us</div>
+      <div class="plan-period" data-i18n="biz.period"></div>
+      <a href="mailto:business@vedetor.com" class="plan-cta ghost" data-i18n="biz.cta">Contact sales →</a>
+      <ul class="plan-features">
+        <li><span class="ic">✓</span> <span data-i18n="biz.f1"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="biz.f2"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="biz.f3"></span></li>
+        <li><span class="ic">✓</span> <span data-i18n="biz.f4"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2 data-i18n="faq.title">Frequently asked questions</h2>
+    <div class="faq-item"><h3 data-i18n="faq.q1"></h3><p data-i18n="faq.a1"></p></div>
+    <div class="faq-item"><h3 data-i18n="faq.q2"></h3><p data-i18n="faq.a2"></p></div>
+    <div class="faq-item"><h3 data-i18n="faq.q3"></h3><p data-i18n="faq.a3"></p></div>
+    <div class="faq-item"><h3 data-i18n="faq.q4"></h3><p data-i18n="faq.a4"></p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img">
+ Vedetor</div>
+    <div class="footer-links">
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+      <a href="terms.html" data-i18n="nav.terms">Terms</a>
+      <a href="mailto:support@vedetor.com" data-i18n="nav.contact">Contact us</a>
+    </div>
+    <div class="foot-note">© 2026 Vedetor</div>
+  </div>
+</footer>
+
+<script>
+const RTL_LANGS = ["ar", "fa"];
+const translations = {
+  en: {
+    "nav.features":"Features",
+    "nav.audience":"Who it's for",
+    "nav.pricing":"Pricing",
+    "nav.privacy":"Privacy",
+    "nav.terms":"Terms",
+    "nav.contact":"Contact us",
+    "nav.home":"Home",
+    "nav.tutorial":"Getting started",
+    "head.eyebrow":"Pricing",
+    "head.title":"Simple, transparent, no hidden fees",
+    "head.sub":"Start on the free plan. Upgrade the moment you need more — cancel any time.",
+    "toggle.monthly":"Monthly",
+    "toggle.yearly":"Yearly",
+    "toggle.save":"2 months free",
+    "badge.popular":"Most popular",
+    "free.name":"Free",
+    "free.desc":"Try Vedetor and get familiar with it",
+    "free.period":"Free forever",
+    "free.cta":"Start for free",
+    "free.f1":"1 monitored device",
+    "free.f2":"Device registration & pairing",
+    "free.f3":"Live location & status",
+    "free.f4":"Send/receive remote commands",
+    "free.f5":"Emergency SOS",
+    "personal.name":"Personal",
+    "personal.desc":"For parents who want everything",
+    "personal.perMonth":"/ month",
+    "personal.billed":"Billed",
+    "personal.cta":"Upgrade to Personal →",
+    "personal.f1":"1 monitored device",
+    "personal.f2":"Live location & status",
+    "personal.f3":"Full remote control (lock, wipe, sound)",
+    "personal.f4":"Emergency SOS",
+    "personal.f5":"Works over SMS, no internet needed",
+    "biz.name":"Business",
+    "biz.desc":"For managing multiple devices in an organization",
+    "biz.price":"Contact us",
+    "biz.period":"Annual contract, priced by device count",
+    "biz.cta":"Contact sales →",
+    "biz.f1":"Any number of devices",
+    "biz.f2":"Everything in Personal",
+    "biz.f3":"Organization invoicing",
+    "biz.f4":"Dedicated support",
+    "faq.title":"Frequently asked questions",
+    "faq.q1":"How do I install it?",
+    "faq.a1":"From Cafe Bazaar, Google Play, or the direct download link on this site.",
+    "faq.q2":"Is my data safe?",
+    "faq.a2":"Data only ever flows between the monitored device and the guardian — never sold or shared.",
+    "faq.q3":"What's the domestic server?",
+    "faq.a3":"For Cafe Bazaar installs, an option to route data through infrastructure inside Iran, no VPN needed.",
+    "faq.q4":"Can I cancel any time?",
+    "faq.a4":"Yes — Personal can be canceled whenever, and stays active until the paid period ends.",
+  },
+  fa: {
+    "nav.features":"ویژگی‌ها",
+    "nav.audience":"برای چه کسانی",
+    "nav.pricing":"قیمت‌گذاری",
+    "nav.privacy":"حریم خصوصی",
+    "nav.terms":"شرایط استفاده",
+    "nav.contact":"تماس با ما",
+    "nav.home":"صفحه اصلی",
+    "nav.tutorial":"شروع کار",
+    "head.eyebrow":"قیمت‌گذاری",
+    "head.title":"ساده، شفاف، بدون هزینه‌ی پنهان",
+    "head.sub":"با پلن رایگان شروع کن. هر وقت به بیشتر نیاز داشتی ارتقا بده — هر وقت خواستی هم لغو کن.",
+    "toggle.monthly":"ماهانه",
+    "toggle.yearly":"سالانه",
+    "toggle.save":"۲ ماه رایگان",
+    "badge.popular":"پیشنهادی",
+    "free.name":"رایگان",
+    "free.desc":"برای امتحان کردن و آشنایی با Vedetor",
+    "free.period":"همیشه رایگان",
+    "free.cta":"شروع رایگان",
+    "free.f1":"۱ دستگاه زیرنظر",
+    "free.f2":"ثبت‌نام و جفت‌سازی دستگاه",
+    "free.f3":"موقعیت و وضعیت لحظه‌ای",
+    "free.f4":"ارسال/دریافت دستور از راه دور",
+    "free.f5":"SOS اضطراری",
+    "personal.name":"شخصی",
+    "personal.desc":"برای والدینی که می‌خوان همه‌چیز رو داشته باشن",
+    "personal.perMonth":"/ ماه",
+    "personal.billed":"پرداخت",
+    "personal.cta":"ارتقا به شخصی ←",
+    "personal.f1":"۱ دستگاه زیرنظر",
+    "personal.f2":"موقعیت و وضعیت لحظه‌ای",
+    "personal.f3":"کنترل کامل از راه دور (قفل، پاک‌سازی، صدا)",
+    "personal.f4":"SOS اضطراری",
+    "personal.f5":"کار با پیامک، بدون نیاز به اینترنت",
+    "biz.name":"سازمانی",
+    "biz.desc":"برای مدیریت چند دستگاه در یک سازمان",
+    "biz.price":"تماس بگیرید",
+    "biz.period":"قرارداد سالانه، بر اساس تعداد دستگاه",
+    "biz.cta":"تماس با فروش ←",
+    "biz.f1":"تعداد دستگاه دلخواه",
+    "biz.f2":"همه‌ی امکانات پلن شخصی",
+    "biz.f3":"صورت‌حساب سازمانی",
+    "biz.f4":"پشتیبانی اختصاصی",
+    "faq.title":"سوالات متداول",
+    "faq.q1":"چطور نصبش کنم؟",
+    "faq.a1":"از کافه‌بازار، گوگل‌پلی، یا لینک دانلود مستقیم همین سایت.",
+    "faq.q2":"آیا اطلاعاتم امنه؟",
+    "faq.a2":"داده‌ها فقط بین دستگاه زیرنظر و سرپرست ردوبدل می‌شن — هرگز فروخته یا به اشتراک گذاشته نمی‌شن.",
+    "faq.q3":"سرور داخلی چیه؟",
+    "faq.a3":"برای نصب از کافه‌بازار، گزینه‌ای هست که داده‌ها از زیرساخت داخل ایران رد بشه، بدون نیاز به VPN.",
+    "faq.q4":"می‌تونم هر وقت لغو کنم؟",
+    "faq.a4":"بله، اشتراک شخصی هر زمان قابل لغوه و تا پایان دوره‌ی پرداخت‌شده فعال می‌مونه.",
+  },
+  ar: {
+    "nav.features":"الميزات",
+    "nav.audience":"لمن هذا",
+    "nav.pricing":"الأسعار",
+    "nav.privacy":"الخصوصية",
+    "nav.terms":"الشروط",
+    "nav.contact":"تواصل معنا",
+    "nav.home":"الرئيسية",
+    "nav.tutorial":"البدء",
+    "head.eyebrow":"الأسعار",
+    "head.title":"بسيط وشفاف وبدون رسوم خفية",
+    "head.sub":"ابدأ بالخطة المجانية. قم بالترقية عندما تحتاج للمزيد — ألغِ في أي وقت.",
+    "toggle.monthly":"شهري",
+    "toggle.yearly":"سنوي",
+    "toggle.save":"شهران مجانًا",
+    "badge.popular":"الأكثر شيوعًا",
+    "free.name":"مجاني",
+    "free.desc":"جرّب Vedetor وتعرّف عليه",
+    "free.period":"مجاني للأبد",
+    "free.cta":"ابدأ مجانًا",
+    "free.f1":"جهاز واحد خاضع للمراقبة",
+    "free.f2":"تسجيل الجهاز واقترانه",
+    "free.f3":"الموقع والحالة اللحظية",
+    "free.f4":"إرسال/استلام أوامر عن بُعد",
+    "free.f5":"SOS للطوارئ",
+    "personal.name":"شخصي",
+    "personal.desc":"للآباء الذين يريدون كل شيء",
+    "personal.perMonth":"/ شهر",
+    "personal.billed":"الفوترة",
+    "personal.cta":"الترقية إلى شخصي ←",
+    "personal.f1":"جهاز واحد خاضع للمراقبة",
+    "personal.f2":"الموقع والحالة اللحظية",
+    "personal.f3":"تحكم كامل عن بُعد (قفل، مسح، صوت)",
+    "personal.f4":"SOS للطوارئ",
+    "personal.f5":"يعمل عبر الرسائل النصية، دون الحاجة لإنترنت",
+    "biz.name":"الأعمال",
+    "biz.desc":"لإدارة أجهزة متعددة في مؤسسة",
+    "biz.price":"تواصل معنا",
+    "biz.period":"عقد سنوي، حسب عدد الأجهزة",
+    "biz.cta":"تواصل مع المبيعات ←",
+    "biz.f1":"أي عدد من الأجهزة",
+    "biz.f2":"كل ما في خطة شخصي",
+    "biz.f3":"فوترة المؤسسة",
+    "biz.f4":"دعم مخصص",
+    "faq.title":"الأسئلة الشائعة",
+    "faq.q1":"كيف أثبته؟",
+    "faq.a1":"من كافه بازار أو Google Play أو رابط التنزيل المباشر في هذا الموقع.",
+    "faq.q2":"هل بياناتي آمنة؟",
+    "faq.a2":"تتدفق البيانات فقط بين الجهاز الخاضع للمراقبة وولي الأمر — لا تُباع أو تُشارك أبدًا.",
+    "faq.q3":"ما هو الخادم المحلي؟",
+    "faq.a3":"لتثبيتات كافه بازار، خيار لتوجيه البيانات عبر بنية تحتية داخل إيران، دون الحاجة لـ VPN.",
+    "faq.q4":"هل يمكنني الإلغاء في أي وقت؟",
+    "faq.a4":"نعم، يمكن إلغاء خطة شخصي في أي وقت، وتبقى نشطة حتى نهاية الفترة المدفوعة.",
+  },
+  tr: {
+    "nav.features":"Özellikler",
+    "nav.audience":"Kimler için",
+    "nav.pricing":"Fiyatlandırma",
+    "nav.privacy":"Gizlilik",
+    "nav.terms":"Koşullar",
+    "nav.contact":"Bize ulaşın",
+    "nav.home":"Ana Sayfa",
+    "nav.tutorial":"Başlarken",
+    "head.eyebrow":"Fiyatlandırma",
+    "head.title":"Basit, şeffaf, gizli ücret yok",
+    "head.sub":"Ücretsiz planla başlayın. Daha fazlasına ihtiyaç duyduğunuzda yükseltin — istediğiniz zaman iptal edin.",
+    "toggle.monthly":"Aylık",
+    "toggle.yearly":"Yıllık",
+    "toggle.save":"2 ay ücretsiz",
+    "badge.popular":"En popüler",
+    "free.name":"Ücretsiz",
+    "free.desc":"Vedetor'u deneyin ve tanıyın",
+    "free.period":"Sonsuza dek ücretsiz",
+    "free.cta":"Ücretsiz başla",
+    "free.f1":"1 izlenen cihaz",
+    "free.f2":"Cihaz kaydı ve eşleştirme",
+    "free.f3":"Anlık konum ve durum",
+    "free.f4":"Uzaktan komut gönder/al",
+    "free.f5":"Acil SOS",
+    "personal.name":"Kişisel",
+    "personal.desc":"Her şeyi isteyen ebeveynler için",
+    "personal.perMonth":"/ ay",
+    "personal.billed":"Faturalama",
+    "personal.cta":"Kişisel'e Yükselt →",
+    "personal.f1":"1 izlenen cihaz",
+    "personal.f2":"Anlık konum ve durum",
+    "personal.f3":"Tam uzaktan kontrol (kilit, silme, ses)",
+    "personal.f4":"Acil SOS",
+    "personal.f5":"SMS üzerinden çalışır, internet gerekmez",
+    "biz.name":"Kurumsal",
+    "biz.desc":"Bir kurumda birden çok cihazı yönetmek için",
+    "biz.price":"Bize ulaşın",
+    "biz.period":"Yıllık sözleşme, cihaz sayısına göre fiyatlandırılır",
+    "biz.cta":"Satışla iletişime geçin →",
+    "biz.f1":"İstediğiniz kadar cihaz",
+    "biz.f2":"Kişisel'deki her şey",
+    "biz.f3":"Kurumsal faturalama",
+    "biz.f4":"Özel destek",
+    "faq.title":"Sıkça sorulan sorular",
+    "faq.q1":"Nasıl kurarım?",
+    "faq.a1":"Cafe Bazaar, Google Play veya bu sitedeki doğrudan indirme bağlantısından.",
+    "faq.q2":"Verilerim güvende mi?",
+    "faq.a2":"Veriler yalnızca izlenen cihaz ile veli arasında akar — asla satılmaz veya paylaşılmaz.",
+    "faq.q3":"Yerel sunucu nedir?",
+    "faq.a3":"Cafe Bazaar kurulumları için, verileri İran içindeki altyapı üzerinden yönlendirme seçeneği, VPN gerekmez.",
+    "faq.q4":"İstediğim zaman iptal edebilir miyim?",
+    "faq.a4":"Evet — Kişisel plan istediğiniz zaman iptal edilebilir ve ödenen dönem sonuna kadar aktif kalır.",
+  },
+  es: {
+    "nav.features":"Funciones",
+    "nav.audience":"Para quién es",
+    "nav.pricing":"Precios",
+    "nav.privacy":"Privacidad",
+    "nav.terms":"Términos",
+    "nav.contact":"Contáctanos",
+    "nav.home":"Inicio",
+    "nav.tutorial":"Cómo empezar",
+    "head.eyebrow":"Precios",
+    "head.title":"Simple, transparente, sin cargos ocultos",
+    "head.sub":"Comienza con el plan gratuito. Actualiza cuando necesites más — cancela cuando quieras.",
+    "toggle.monthly":"Mensual",
+    "toggle.yearly":"Anual",
+    "toggle.save":"2 meses gratis",
+    "badge.popular":"Más popular",
+    "free.name":"Gratis",
+    "free.desc":"Prueba Vedetor y familiarízate",
+    "free.period":"Gratis para siempre",
+    "free.cta":"Empieza gratis",
+    "free.f1":"1 dispositivo monitoreado",
+    "free.f2":"Registro y emparejamiento de dispositivo",
+    "free.f3":"Ubicación y estado en vivo",
+    "free.f4":"Enviar/recibir comandos remotos",
+    "free.f5":"SOS de emergencia",
+    "personal.name":"Personal",
+    "personal.desc":"Para padres que lo quieren todo",
+    "personal.perMonth":"/ mes",
+    "personal.billed":"Facturado",
+    "personal.cta":"Actualizar a Personal →",
+    "personal.f1":"1 dispositivo monitoreado",
+    "personal.f2":"Ubicación y estado en vivo",
+    "personal.f3":"Control remoto total (bloqueo, borrado, sonido)",
+    "personal.f4":"SOS de emergencia",
+    "personal.f5":"Funciona por SMS, sin necesidad de internet",
+    "biz.name":"Empresarial",
+    "biz.desc":"Para gestionar varios dispositivos en una organización",
+    "biz.price":"Contáctanos",
+    "biz.period":"Contrato anual, según cantidad de dispositivos",
+    "biz.cta":"Contactar ventas →",
+    "biz.f1":"Cualquier cantidad de dispositivos",
+    "biz.f2":"Todo lo de Personal",
+    "biz.f3":"Facturación organizacional",
+    "biz.f4":"Soporte dedicado",
+    "faq.title":"Preguntas frecuentes",
+    "faq.q1":"¿Cómo lo instalo?",
+    "faq.a1":"Desde Cafe Bazaar, Google Play, o el enlace de descarga directa en este sitio.",
+    "faq.q2":"¿Mis datos están seguros?",
+    "faq.a2":"Los datos solo fluyen entre el dispositivo monitoreado y el tutor — nunca se venden ni comparten.",
+    "faq.q3":"¿Qué es el servidor local?",
+    "faq.a3":"Para instalaciones de Cafe Bazaar, una opción para enrutar datos por infraestructura dentro de Irán, sin VPN.",
+    "faq.q4":"¿Puedo cancelar en cualquier momento?",
+    "faq.a4":"Sí — Personal se puede cancelar cuando quieras, y sigue activo hasta el final del período pagado.",
+  },
+  zh: {
+    "nav.features":"功能",
+    "nav.audience":"适用对象",
+    "nav.pricing":"价格",
+    "nav.privacy":"隐私政策",
+    "nav.terms":"条款",
+    "nav.contact":"联系我们",
+    "nav.home":"首页",
+    "nav.tutorial":"快速开始",
+    "head.eyebrow":"价格",
+    "head.title":"简单透明，无隐藏费用",
+    "head.sub":"从免费套餐开始。需要更多功能时随时升级——随时可取消。",
+    "toggle.monthly":"月付",
+    "toggle.yearly":"年付",
+    "toggle.save":"免费2个月",
+    "badge.popular":"最受欢迎",
+    "free.name":"免费",
+    "free.desc":"试用 Vedetor，熟悉其功能",
+    "free.period":"永久免费",
+    "free.cta":"免费开始",
+    "free.f1":"1台受监控设备",
+    "free.f2":"设备注册与配对",
+    "free.f3":"实时位置与状态",
+    "free.f4":"发送/接收远程指令",
+    "free.f5":"紧急SOS",
+    "personal.name":"个人版",
+    "personal.desc":"适合追求全面功能的家长",
+    "personal.perMonth":"/ 月",
+    "personal.billed":"计费方式",
+    "personal.cta":"升级到个人版 →",
+    "personal.f1":"1台受监控设备",
+    "personal.f2":"实时位置与状态",
+    "personal.f3":"完整远程控制（锁定、清除数据、声音）",
+    "personal.f4":"紧急SOS",
+    "personal.f5":"可通过短信运行，无需网络",
+    "biz.name":"企业版",
+    "biz.desc":"用于管理组织内的多台设备",
+    "biz.price":"联系我们",
+    "biz.period":"年度合同，按设备数量计费",
+    "biz.cta":"联系销售 →",
+    "biz.f1":"任意数量设备",
+    "biz.f2":"个人版全部功能",
+    "biz.f3":"企业发票",
+    "biz.f4":"专属支持",
+    "faq.title":"常见问题",
+    "faq.q1":"如何安装？",
+    "faq.a1":"可通过 Cafe Bazaar、Google Play 或本站的直接下载链接安装。",
+    "faq.q2":"我的数据安全吗？",
+    "faq.a2":"数据仅在受监控设备与监护人之间流动——绝不出售或共享。",
+    "faq.q3":"什么是本地服务器？",
+    "faq.a3":"对于通过 Cafe Bazaar 安装的用户，可选择将数据通过伊朗境内基础设施传输，无需VPN。",
+    "faq.q4":"我可以随时取消吗？",
+    "faq.a4":"可以——个人版可随时取消，并将持续有效至已付费周期结束。",
+  },
+  fr: {
+    "nav.features":"Fonctionnalités",
+    "nav.audience":"Pour qui",
+    "nav.pricing":"Tarifs",
+    "nav.privacy":"Confidentialité",
+    "nav.terms":"Conditions",
+    "nav.contact":"Nous contacter",
+    "nav.home":"Accueil",
+    "nav.tutorial":"Prise en main",
+    "head.eyebrow":"Tarifs",
+    "head.title":"Simple, transparent, sans frais cachés",
+    "head.sub":"Commencez avec le plan gratuit. Passez à un forfait supérieur dès que vous en avez besoin — annulez à tout moment.",
+    "toggle.monthly":"Mensuel",
+    "toggle.yearly":"Annuel",
+    "toggle.save":"2 mois offerts",
+    "badge.popular":"Le plus populaire",
+    "free.name":"Gratuit",
+    "free.desc":"Essayez Vedetor et familiarisez-vous",
+    "free.period":"Gratuit pour toujours",
+    "free.cta":"Commencer gratuitement",
+    "free.f1":"1 appareil surveillé",
+    "free.f2":"Enregistrement et association de l'appareil",
+    "free.f3":"Position et état en direct",
+    "free.f4":"Envoyer/recevoir des commandes à distance",
+    "free.f5":"SOS d'urgence",
+    "personal.name":"Personnel",
+    "personal.desc":"Pour les parents qui veulent tout",
+    "personal.perMonth":"/ mois",
+    "personal.billed":"Facturation",
+    "personal.cta":"Passer à Personnel →",
+    "personal.f1":"1 appareil surveillé",
+    "personal.f2":"Position et état en direct",
+    "personal.f3":"Contrôle à distance complet (verrouillage, effacement, son)",
+    "personal.f4":"SOS d'urgence",
+    "personal.f5":"Fonctionne par SMS, sans besoin d'internet",
+    "biz.name":"Entreprise",
+    "biz.desc":"Pour gérer plusieurs appareils dans une organisation",
+    "biz.price":"Contactez-nous",
+    "biz.period":"Contrat annuel, tarifé selon le nombre d'appareils",
+    "biz.cta":"Contacter les ventes →",
+    "biz.f1":"Nombre d'appareils illimité",
+    "biz.f2":"Tout ce qui est inclus dans Personnel",
+    "biz.f3":"Facturation d'entreprise",
+    "biz.f4":"Support dédié",
+    "faq.title":"Questions fréquentes",
+    "faq.q1":"Comment l'installer ?",
+    "faq.a1":"Depuis Cafe Bazaar, Google Play, ou le lien de téléchargement direct de ce site.",
+    "faq.q2":"Mes données sont-elles sûres ?",
+    "faq.a2":"Les données ne circulent qu'entre l'appareil surveillé et le tuteur — jamais vendues ni partagées.",
+    "faq.q3":"Qu'est-ce que le serveur local ?",
+    "faq.a3":"Pour les installations via Cafe Bazaar, une option pour acheminer les données via une infrastructure en Iran, sans VPN.",
+    "faq.q4":"Puis-je annuler à tout moment ?",
+    "faq.a4":"Oui — Personnel peut être annulé à tout moment, et reste actif jusqu'à la fin de la période payée.",
+  },
+};
+
+function applyLang(lang){
+  const root = document.getElementById('html-root');
+  root.setAttribute('lang', lang);
+  root.setAttribute('dir', RTL_LANGS.includes(lang) ? 'rtl' : 'ltr');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+  });
+  document.querySelectorAll('.lang-menu button').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  document.getElementById('lang-btn-label').textContent = lang.toUpperCase();
+  localStorage.setItem('vedetor_lang', lang);
+  document.getElementById('lang-menu').classList.remove('open');
+  const isYearly = document.getElementById('billing-toggle').classList.contains('on');
+  document.getElementById('period-text').textContent = isYearly ? translations[lang]['toggle.yearly'] : translations[lang]['toggle.monthly'];
+}
+document.querySelectorAll('.lang-menu button').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+});
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.lang-switch')) document.getElementById('lang-menu').classList.remove('open');
+});
+const savedLang = localStorage.getItem('vedetor_lang');
+if (savedLang && translations[savedLang]) applyLang(savedLang);
+
+function toggleBilling(){
+  const t = document.getElementById('billing-toggle');
+  const isYearly = !t.classList.contains('on');
+  t.classList.toggle('on', isYearly);
+  document.getElementById('label-monthly').classList.toggle('active', !isYearly);
+  document.getElementById('label-yearly').classList.toggle('active', isYearly);
+  document.querySelectorAll('.monthly-price').forEach(el => el.classList.toggle('show', !isYearly));
+  document.querySelectorAll('.yearly-price').forEach(el => el.classList.toggle('show', isYearly));
+  const lang = document.getElementById('html-root').getAttribute('lang');
+  document.getElementById('period-text').textContent = isYearly ? translations[lang]['toggle.yearly'] : translations[lang]['toggle.monthly'];
+}
+</script>
+
+</body>
+</html>
