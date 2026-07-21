@@ -108,31 +108,19 @@ html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
 .faq-item p{color:var(--text-1); font-size:.88rem;}
 @media (max-width:880px){ .plan-grid{grid-template-columns:1fr; max-width:420px; margin:0 auto;} }
 
+
+.logo-img{width:38px; height:38px; border-radius:11px; box-shadow:0 0 0 0 #f4c44e66; animation:logoGlow 2.6s ease-in-out infinite;}
+@keyframes logoGlow{
+  0%,100%{ box-shadow:0 0 0 0 #f4c44e55, 0 4px 14px -4px #f4c44e88; }
+  50%{ box-shadow:0 0 0 7px #f4c44e00, 0 4px 20px -2px #f4c44eaa; }
+}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="logo"><svg class="logo-svg" width="34" height="34" viewBox="0 0 40 40" fill="none">
-  <defs>
-    <linearGradient id="shieldFill" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#232d40"/>
-      <stop offset="100%" stop-color="#0a0e14"/>
-    </linearGradient>
-  </defs>
-  <path d="M20 3 L34 8.2 V19 C34 28.5 28 34.5 20 37.5 C12 34.5 6 28.5 6 19 V8.2 Z"
-        fill="url(#shieldFill)" stroke="#f4c44e" stroke-width="1.4"/>
-  <line x1="20" y1="16.5" x2="14" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <line x1="20" y1="16.5" x2="26" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <line x1="14" y1="24.5" x2="26" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <circle cx="14" cy="24.5" r="2" fill="#f4c44e" opacity=".8"/>
-  <circle cx="26" cy="24.5" r="2" fill="#f4c44e" opacity=".8"/>
-  <circle cx="20" cy="16.5" r="2.6" fill="#f4c44e">
-    <animate attributeName="r" values="2.4;3.3;2.4" dur="2.4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.75;1" dur="2.4s" repeatCount="indefinite"/>
-  </circle>
-</svg>
+    <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img">
  Vedetor</div>
     <div class="nav-links">
       <a href="index.html#features" data-i18n="nav.features">Features</a>
@@ -234,25 +222,7 @@ html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
 
 <footer>
   <div class="wrap footer-row">
-    <div class="logo"><svg class="logo-svg" width="34" height="34" viewBox="0 0 40 40" fill="none">
-  <defs>
-    <linearGradient id="shieldFill" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#232d40"/>
-      <stop offset="100%" stop-color="#0a0e14"/>
-    </linearGradient>
-  </defs>
-  <path d="M20 3 L34 8.2 V19 C34 28.5 28 34.5 20 37.5 C12 34.5 6 28.5 6 19 V8.2 Z"
-        fill="url(#shieldFill)" stroke="#f4c44e" stroke-width="1.4"/>
-  <line x1="20" y1="16.5" x2="14" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <line x1="20" y1="16.5" x2="26" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <line x1="14" y1="24.5" x2="26" y2="24.5" stroke="#f4c44e" stroke-width="1.1" opacity=".55"/>
-  <circle cx="14" cy="24.5" r="2" fill="#f4c44e" opacity=".8"/>
-  <circle cx="26" cy="24.5" r="2" fill="#f4c44e" opacity=".8"/>
-  <circle cx="20" cy="16.5" r="2.6" fill="#f4c44e">
-    <animate attributeName="r" values="2.4;3.3;2.4" dur="2.4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.75;1" dur="2.4s" repeatCount="indefinite"/>
-  </circle>
-</svg>
+    <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img">
  Vedetor</div>
     <div class="footer-links">
       <a href="index.html" data-i18n="nav.home">Home</a>
