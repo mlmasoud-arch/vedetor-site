@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vedetor — Peace of mind, not surveillance</title>
-<meta name="description" content="Vedetor is a transparent monitoring app for parents, organizations and managers — live location, full remote control, and it keeps working even without internet.">
+<title>Vedetor — Family &amp; Team Location Tracking, Remote Control &amp; SOS App</title>
+<meta name="description" content="Vedetor is a transparent monitoring app for parents and organizations: live location tracking, full remote device control, emergency SOS, and it keeps working over SMS even without internet.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,58 +74,63 @@ footer{border-top:1px solid var(--line); padding:44px 0; position:relative; z-in
   0%,100%{ box-shadow:0 0 0 0 #f4c44e55, 0 4px 14px -4px #f4c44e88; }
   50%{ box-shadow:0 0 0 7px #f4c44e00, 0 4px 20px -2px #f4c44eaa; }
 }
-.hero{position:relative; z-index:1; padding:84px 0 60px;}
-.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
-h1{font-size:clamp(2.1rem,4.2vw,3.3rem); font-weight:700; line-height:1.22; letter-spacing:-.01em; margin-bottom:22px;}
+
+/* HERO */
+.hero{position:relative; z-index:1; padding:76px 0 56px; overflow:hidden;}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center;}
+.kicker{font-size:.95rem; font-weight:600; color:var(--text-1); margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+.kicker .ic{width:22px; height:22px; border-radius:6px; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; font-size:.8rem; flex-shrink:0;}
+h1{font-size:clamp(1.9rem,4vw,3.1rem); font-weight:700; line-height:1.2; letter-spacing:-.01em; margin-bottom:20px;}
 h1 em{font-style:normal; color:var(--gold);}
-.hero p.lead{font-size:1.06rem; color:var(--text-1); max-width:50ch; margin-bottom:30px;}
+.hero p.lead{font-size:1.02rem; color:var(--text-1); max-width:50ch; margin-bottom:26px;}
+.benefit-chips{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px;}
+.chip{display:flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); padding:9px 15px; border-radius:100px; font-size:.83rem; font-weight:600; color:var(--text-0);}
+.chip .ic{font-size:.95rem;}
 .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px;}
 .store-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
 
-/* store badges — close approximations; swap for the official downloadable assets before launch */
 .badge-play{display:flex; align-items:center; gap:10px; background:#000; border:1px solid #3a3a3a; padding:9px 16px; border-radius:9px; transition:transform .15s;}
 .badge-play:hover{transform:translateY(-1px);}
-.badge-play svg{width:24px; height:24px;}
+.badge-play svg{width:24px; height:24px; flex-shrink:0;}
 .badge-play .txt{display:flex; flex-direction:column; line-height:1.2;}
 .badge-play .txt span:first-child{font-size:.58rem; color:#ccc; letter-spacing:.03em;}
-.badge-play .txt span:last-child{font-size:.98rem; font-weight:600; color:#fff; font-family:var(--f-body); font-style:italic;}
+.badge-play .txt span:last-child{font-size:.98rem; font-weight:600; color:#fff; font-style:italic;}
 .badge-bazaar{display:flex; align-items:center; gap:10px; background:#fff; padding:9px 16px; border-radius:9px; transition:transform .15s;}
 .badge-bazaar:hover{transform:translateY(-1px);}
-.badge-bazaar .ic{width:24px; height:24px; border-radius:6px; background:linear-gradient(135deg,#ff5722,#e64a19); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:.85rem; font-family:var(--f-display);}
+.badge-bazaar .ic{width:24px; height:24px; border-radius:6px; background:linear-gradient(135deg,#ff5722,#e64a19); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:.85rem; font-family:var(--f-display); flex-shrink:0;}
 .badge-bazaar .txt{display:flex; flex-direction:column; line-height:1.2;}
-.badge-bazaar .txt span:first-child{font-size:.58rem; color:#888; letter-spacing:.02em;}
+.badge-bazaar .txt span:first-child{font-size:.58rem; color:#888;}
 .badge-bazaar .txt span:last-child{font-size:.92rem; font-weight:700; color:#1a1a1a;}
 .badge-direct{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); padding:9px 16px; border-radius:9px; transition:transform .15s, border-color .15s;}
 .badge-direct:hover{transform:translateY(-1px); border-color:var(--gold);}
-.badge-direct .ic{width:24px; height:24px; border-radius:6px; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1rem;}
+.badge-direct .ic{width:24px; height:24px; border-radius:6px; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1rem; flex-shrink:0;}
 .badge-direct .txt{display:flex; flex-direction:column; line-height:1.2;}
-.badge-direct .txt span:first-child{font-size:.58rem; color:var(--text-2); letter-spacing:.03em;}
+.badge-direct .txt span:first-child{font-size:.58rem; color:var(--text-2);}
 .badge-direct .txt span:last-child{font-size:.9rem; font-weight:700; color:var(--text-0);}
 
-/* REAL SCREENSHOT PHONE FRAMES */
-.scene{position:relative; height:520px; display:flex; align-items:center; justify-content:center;}
-.orbit-ring{position:absolute; width:360px; height:360px; border-radius:50%; border:1px dashed #f4c44e22; animation:spin 44s linear infinite;}
-.orbit-ring.r2{width:450px; height:450px; border-color:#3b5bdb1a; animation-duration:64s; animation-direction:reverse;}
+.scene{position:relative; height:480px; display:flex; align-items:center; justify-content:center; max-width:100%;}
+.orbit-ring{position:absolute; width:340px; height:340px; border-radius:50%; border:1px dashed #f4c44e22; animation:spin 44s linear infinite;}
+.orbit-ring.r2{width:420px; height:420px; border-color:#3b5bdb1a; animation-duration:64s; animation-direction:reverse;}
 @keyframes spin{ to{ transform:rotate(360deg); } }
-
-.phone-frame{position:relative; width:196px; border-radius:32px; background:#0a0a0a; padding:8px; box-shadow:0 40px 90px -25px #000000d0; border:1px solid #2a2a2a;}
-.phone-frame img{width:100%; border-radius:24px; display:block;}
-.phone-frame .notch{position:absolute; top:8px; left:50%; transform:translateX(-50%); width:64px; height:16px; background:#0a0a0a; border-radius:0 0 10px 10px; z-index:3;}
+.phone-frame{position:relative; width:186px; border-radius:30px; background:#0a0a0a; padding:7px; box-shadow:0 40px 90px -25px #000000d0; border:1px solid #2a2a2a; flex-shrink:0;}
+.phone-frame img{width:100%; border-radius:23px; display:block;}
+.phone-frame .notch{position:absolute; top:7px; left:50%; transform:translateX(-50%); width:58px; height:14px; background:#0a0a0a; border-radius:0 0 9px 9px; z-index:3;}
 .phone-front{position:relative; z-index:3; animation:floatSlow 6s ease-in-out infinite;}
-.phone-back{position:absolute; z-index:2; width:170px; top:-38px; left:-96px; opacity:.9; filter:brightness(.75); animation:floatSlow 6s ease-in-out infinite; animation-delay:.6s;}
-@keyframes floatSlow{0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);}}
-.badge-shield{position:absolute; top:-14px; right:-18px; width:56px; height:56px; border-radius:16px; z-index:5; background:linear-gradient(135deg, var(--gold), var(--gold-deep)); display:flex; align-items:center; justify-content:center; font-size:1.4rem; box-shadow:0 14px 30px -8px #f4c44e77; animation:float 4.5s ease-in-out infinite;}
-.badge-float{position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 12px; font-size:.68rem; color:var(--text-1); display:flex; align-items:center; gap:6px; box-shadow:0 20px 40px -20px #000; animation:float 5s ease-in-out infinite; z-index:6;}
+.phone-back{position:absolute; z-index:2; width:160px; top:-34px; left:-88px; opacity:.9; filter:brightness(.75); animation:floatSlow 6s ease-in-out infinite; animation-delay:.6s;}
+@keyframes floatSlow{0%,100%{transform:translateY(0);} 50%{transform:translateY(-11px);}}
+.badge-shield{position:absolute; top:-13px; right:-16px; width:52px; height:52px; border-radius:15px; z-index:5; background:linear-gradient(135deg, var(--gold), var(--gold-deep)); display:flex; align-items:center; justify-content:center; font-size:1.3rem; box-shadow:0 14px 30px -8px #f4c44e77; animation:float 4.5s ease-in-out infinite;}
+.badge-float{position:absolute; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 12px; font-size:.66rem; color:var(--text-1); display:flex; align-items:center; gap:6px; box-shadow:0 20px 40px -20px #000; animation:float 5s ease-in-out infinite; z-index:6; white-space:nowrap;}
 .badge-float b{color:var(--text-0);}
-.badge-1{bottom:20px; right:-40px; animation-delay:.4s;}
-.badge-2{top:60px; right:-56px; animation-delay:1.2s;}
-@keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-9px);}}
+.badge-1{bottom:16px; right:-36px; animation-delay:.4s;}
+.badge-2{top:56px; right:-50px; animation-delay:1.2s;}
+@keyframes float{0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);}}
 
-/* SCREENSHOTS GALLERY SECTION */
-.shots-row{display:flex; gap:22px; overflow-x:auto; padding:10px 4px 20px; scroll-snap-type:x mandatory;}
-.shot-item{flex:0 0 auto; scroll-snap-align:start; text-align:center;}
-.shot-item .phone-frame{width:180px; margin:0 auto 14px;}
-.shot-item .cap{color:var(--text-1); font-size:.85rem; font-weight:600;}
+/* SCREENSHOTS WITH EXPLANATIONS */
+.shots-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+.shot-card{text-align:center;}
+.shot-card .phone-frame{width:170px; margin:0 auto 18px;}
+.shot-card h3{font-size:.98rem; font-weight:700; margin-bottom:8px;}
+.shot-card p{color:var(--text-1); font-size:.83rem;}
 
 .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
 .feature-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px; transition:border-color .2s, transform .2s;}
@@ -134,32 +139,78 @@ h1 em{font-style:normal; color:var(--gold);}
 .feature-card h3{font-size:1.05rem; font-weight:700; margin-bottom:10px;}
 .feature-card p{color:var(--text-1); font-size:.9rem;}
 
-.audience-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-.audience-card{background:linear-gradient(160deg, var(--surface), var(--bg-1)); border:1px solid var(--line); border-radius:var(--radius); padding:34px;}
-.audience-card .tag{font-weight:600; font-size:.74rem; color:var(--blue); margin-bottom:10px; display:block;}
-.audience-card h3{font-size:1.25rem; font-weight:700; margin-bottom:12px;}
-.audience-card p{color:var(--text-1); font-size:.94rem;}
-
 .steps{display:flex; flex-direction:column; gap:14px; max-width:820px; margin:0 auto;}
 .step{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px 26px; display:flex; gap:20px; align-items:flex-start;}
 .step-num{flex-shrink:0; width:42px; height:42px; border-radius:12px; background:var(--gold-dim); border:1px solid #f4c44e40; color:var(--gold); font-family:var(--f-display); font-weight:700; font-size:1.05rem; display:flex; align-items:center; justify-content:center;}
 .step h3{font-size:1rem; font-weight:700; margin-bottom:6px;}
 .step p{color:var(--text-1); font-size:.88rem;}
 
-.cta-band{background:linear-gradient(135deg, #3a2c0d, #0d1a3a); border:1px solid var(--line); border-radius:28px; padding:58px 40px; text-align:center; position:relative; overflow:hidden;}
+/* COMPARISON TABLE */
+.comp-table{width:100%; border-collapse:collapse; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+.comp-table th, .comp-table td{padding:16px 18px; text-align:start; font-size:.9rem; border-bottom:1px solid var(--line);}
+.comp-table th{color:var(--text-1); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.03em;}
+.comp-table th.col-vedetor{color:var(--gold);}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table td.feat{color:var(--text-0); font-weight:500;}
+.comp-table td.yes{color:var(--green); font-weight:700; text-align:center;}
+.comp-table td.no{color:var(--text-2); text-align:center;}
+.comp-wrap{overflow-x:auto;}
+
+/* SECURITY */
+.sec-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:32px;}
+.sec-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+.sec-card h3{font-size:1rem; font-weight:700; margin-bottom:10px; color:var(--gold);}
+.sec-card p{color:var(--text-1); font-size:.88rem;}
+.sec-link{display:block; text-align:center; color:var(--gold); font-weight:600; font-size:.92rem;}
+
+.audience-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+.audience-card{background:linear-gradient(160deg, var(--surface), var(--bg-1)); border:1px solid var(--line); border-radius:var(--radius); padding:34px;}
+.audience-card .tag{font-weight:600; font-size:.74rem; color:var(--blue); margin-bottom:10px; display:block;}
+.audience-card h3{font-size:1.25rem; font-weight:700; margin-bottom:12px;}
+.audience-card p{color:var(--text-1); font-size:.94rem;}
+
+.cta-band{background:linear-gradient(135deg, #3a2c0d, #0d1a3a); border:1px solid var(--line); border-radius:28px; padding:52px 36px; text-align:center; position:relative; overflow:hidden;}
 .cta-band::before{content:""; position:absolute; inset:-40%; background:radial-gradient(circle, #f4c44e22, transparent 60%);}
-.cta-band h2{position:relative; font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px;}
+.cta-band h2{position:relative; font-size:clamp(1.4rem,3vw,2rem); font-weight:700; margin-bottom:14px;}
 .cta-band p{position:relative; color:var(--text-1); margin-bottom:26px;}
 .cta-band .cta-row{justify-content:center; position:relative;}
 
+/* ===== RESPONSIVE — MOBILE FIRST FIXES ===== */
 @media (max-width:920px){
-  .hero-grid{grid-template-columns:1fr;} .scene{height:420px;}
-  .feature-grid{grid-template-columns:1fr 1fr;} .audience-grid{grid-template-columns:1fr;}
+  .hero-grid{grid-template-columns:1fr;}
+  .scene{height:380px;}
+  .feature-grid{grid-template-columns:1fr 1fr;}
+  .shots-grid{grid-template-columns:1fr 1fr;}
+  .sec-grid{grid-template-columns:1fr;}
+  .audience-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
 }
-@media (max-width:560px){
-  .feature-grid{grid-template-columns:1fr;}
-  .step{flex-direction:column;}
-  nav .wrap{height:64px;} .hero{padding:52px 0 40px;}
+@media (max-width:640px){
+  html{overflow-x:hidden;}
+  body{overflow-x:hidden;}
+  .wrap{padding:0 18px;}
+  nav .wrap{height:64px;}
+  .hero{padding:36px 0 32px;}
+  h1{font-size:1.7rem; margin-bottom:16px;}
+  .hero p.lead{font-size:.94rem; margin-bottom:22px;}
+  .kicker{font-size:.82rem;}
+  .benefit-chips{gap:8px;}
+  .chip{font-size:.76rem; padding:7px 12px;}
+  .section{padding:56px 0;}
+  .section-head{margin-bottom:34px;}
+  .section-head h2{font-size:1.35rem;}
+  .feature-grid, .shots-grid{grid-template-columns:1fr;}
+  .step{flex-direction:column; padding:18px 20px;}
+
+  /* simplify the floating hero composition entirely on small screens */
+  .scene{height:auto; padding:20px 0;}
+  .orbit-ring, .phone-back, .badge-shield, .badge-float{display:none;}
+  .phone-frame.phone-front{width:220px; margin:0 auto;}
+  .store-row{gap:8px;}
+  .badge-play, .badge-bazaar, .badge-direct{padding:8px 12px;}
+
+  .comp-table th, .comp-table td{padding:11px 10px; font-size:.78rem;}
+  .cta-band{padding:40px 22px;}
 }
 
 </style>
@@ -171,10 +222,10 @@ h1 em{font-style:normal; color:var(--gold);}
     <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img"> Vedetor</div>
     <div class="nav-links">
       <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how" data-i18n="nav.tutorial">How it works</a>
       <a href="#shots" data-i18n="shots.eyebrow">Screenshots</a>
-      <a href="#tutorial" data-i18n="nav.tutorial">Getting started</a>
+      <a href="#security" data-i18n="sec.eyebrow">Security</a>
       <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
-      <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
     </div>
     <div class="nav-right">
       <div class="lang-switch">
@@ -195,9 +246,14 @@ h1 em{font-style:normal; color:var(--gold);}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero.eyebrow">Now on Google Play, Cafe Bazaar &amp; direct download</span></div>
+      <div class="kicker"><span class="ic">🛡️</span> <span data-i18n="hero.kicker">A monitoring app for families and organizations</span></div>
       <h1 data-i18n-html="hero.title">Peace of mind,<br><em>not surveillance.</em></h1>
       <p class="lead" data-i18n="hero.lead">Vedetor is a transparent monitoring app for parents, organizations and managers.</p>
+      <div class="benefit-chips">
+        <div class="chip"><span class="ic">📍</span> <span data-i18n="f1.title">Live Location</span></div>
+        <div class="chip"><span class="ic">🎛️</span> <span data-i18n="f2.title">Remote Control</span></div>
+        <div class="chip"><span class="ic">🆘</span> <span data-i18n="f4.title">Emergency SOS</span></div>
+      </div>
       <div class="cta-row">
         <a href="pricing.html" class="btn btn-primary" data-i18n="hero.cta1">Start for free →</a>
         <a href="#features" class="btn btn-ghost" data-i18n="hero.cta2">See how it works</a>
@@ -233,22 +289,6 @@ h1 em{font-style:normal; color:var(--gold);}
   </div>
 </header>
 
-<section class="section" id="shots">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="shots.eyebrow">See it in action</span>
-      <h2 data-i18n="shots.title">Real screens, from the real app</h2>
-      <p data-i18n="shots.sub">No mockups.</p>
-    </div>
-    <div class="shots-row">
-      <div class="shot-item"><div class="phone-frame"><img src="assets/shot-dashboard.jpg" alt="Dashboard"></div><div class="cap" data-i18n="shot1.cap">Live dashboard</div></div>
-      <div class="shot-item"><div class="phone-frame"><img src="assets/shot-control.jpg" alt="Remote control"></div><div class="cap" data-i18n="shot2.cap">Remote control</div></div>
-      <div class="shot-item"><div class="phone-frame"><img src="assets/shot-map.jpg" alt="Live map"></div><div class="cap" data-i18n="shot3.cap">Live map</div></div>
-      <div class="shot-item"><div class="phone-frame"><img src="assets/shot-sound.jpg" alt="Sound settings"></div><div class="cap" data-i18n="shot4.cap">Sound settings</div></div>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="features">
   <div class="wrap">
     <div class="section-head">
@@ -267,20 +307,7 @@ h1 em{font-style:normal; color:var(--gold);}
   </div>
 </section>
 
-<section class="section" id="audience">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="audience.eyebrow">Who it's for</span>
-      <h2 data-i18n="audience.title">One tool, two very different days</h2>
-    </div>
-    <div class="audience-grid">
-      <div class="audience-card"><span class="tag" data-i18n="aud1.tag">For parents</span><h3 data-i18n="aud1.title">Daily peace of mind</h3><p data-i18n="aud1.body"></p></div>
-      <div class="audience-card"><span class="tag" data-i18n="aud2.tag">For organizations</span><h3 data-i18n="aud2.title">Managing a fleet</h3><p data-i18n="aud2.body"></p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="tutorial">
+<section class="section" id="how">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="tut.eyebrow">Getting started</span>
@@ -294,6 +321,69 @@ h1 em{font-style:normal; color:var(--gold);}
       <div class="step"><div class="step-num">4</div><div><h3 data-i18n="s4.title">Pair the devices</h3><p data-i18n="s4.body"></p></div></div>
       <div class="step"><div class="step-num">5</div><div><h3 data-i18n="s5.title">You're all set</h3><p data-i18n="s5.body"></p></div></div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="shots">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="shots.eyebrow">See it in action</span>
+      <h2 data-i18n="shots.title">Real screens, from the real app</h2>
+      <p data-i18n="shots.sub">No mockups.</p>
+    </div>
+    <div class="shots-grid">
+      <div class="shot-card"><div class="phone-frame"><img src="assets/shot-dashboard.jpg" alt="Dashboard"></div><h3 data-i18n="shot1.cap">Live dashboard</h3><p data-i18n="shot1.exp"></p></div>
+      <div class="shot-card"><div class="phone-frame"><img src="assets/shot-control.jpg" alt="Remote control"></div><h3 data-i18n="shot2.cap">Remote control</h3><p data-i18n="shot2.exp"></p></div>
+      <div class="shot-card"><div class="phone-frame"><img src="assets/shot-map.jpg" alt="Live map"></div><h3 data-i18n="shot3.cap">Live map</h3><p data-i18n="shot3.exp"></p></div>
+      <div class="shot-card"><div class="phone-frame"><img src="assets/shot-sound.jpg" alt="Sound settings"></div><h3 data-i18n="shot4.cap">Sound settings</h3><p data-i18n="shot4.exp"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="comparison">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="comp.eyebrow">Why Vedetor</span>
+      <h2 data-i18n="comp.title">Not all monitoring apps are built the same way</h2>
+      <p data-i18n="comp.sub"></p>
+    </div>
+    <div class="comp-wrap">
+      <table class="comp-table">
+        <tr><th></th><th class="col-vedetor" data-i18n="comp.colVedetor">Vedetor</th><th data-i18n="comp.colTypical">Typical apps</th></tr>
+        <tr><td class="feat" data-i18n="comp.row1">Works without internet (SMS fallback)</td><td class="yes">✓</td><td class="no" data-i18n="comp.rare">Rarely</td></tr>
+        <tr><td class="feat" data-i18n="comp.row2">Full remote control (lock, wipe, sound)</td><td class="yes">✓</td><td class="no">✕</td></tr>
+        <tr><td class="feat" data-i18n="comp.row3">Transparent to the monitored device</td><td class="yes">✓</td><td class="no">✕</td></tr>
+        <tr><td class="feat" data-i18n="comp.row4">Local/domestic infrastructure option</td><td class="yes">✓</td><td class="no">✕</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="audience.eyebrow">Who it's for</span>
+      <h2 data-i18n="audience.title">One tool, two very different days</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card"><span class="tag" data-i18n="aud1.tag">For parents</span><h3 data-i18n="aud1.title">Daily peace of mind</h3><p data-i18n="aud1.body"></p></div>
+      <div class="audience-card"><span class="tag" data-i18n="aud2.tag">For organizations</span><h3 data-i18n="aud2.title">Managing a fleet</h3><p data-i18n="aud2.body"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="sec.eyebrow">Security &amp; Privacy</span>
+      <h2 data-i18n="sec.title">Your trust is the whole point</h2>
+    </div>
+    <div class="sec-grid">
+      <div class="sec-card"><h3 data-i18n="sec.p1t">Never hidden</h3><p data-i18n="sec.p1b"></p></div>
+      <div class="sec-card"><h3 data-i18n="sec.p2t">Your data is never sold</h3><p data-i18n="sec.p2b"></p></div>
+      <div class="sec-card"><h3 data-i18n="sec.p3t">Choose where your data lives</h3><p data-i18n="sec.p3b"></p></div>
+    </div>
+    <a href="privacy.html" class="sec-link" data-i18n="sec.link">Read the full Privacy Policy →</a>
   </div>
 </section>
 
@@ -321,7 +411,7 @@ h1 em{font-style:normal; color:var(--gold);}
 </footer>
 
 <script>
-const RTL_LANGS = ["ar", "fa"];
+const RTL_LANGS = ["fa", "ar"];
 const translations = {
   en: {
     "nav.features":"Features",
@@ -397,13 +487,30 @@ const translations = {
     "cta.title":"Start today",
     "cta.body":"The free plan is always available. Upgrade whenever you need the full toolkit.",
     "cta.button":"See pricing →",
-    "shots.eyebrow":"See it in action",
-    "shots.title":"Real screens, from the real app",
-    "shots.sub":"No mockups — this is exactly what you'll see on your own phone.",
-    "shot1.cap":"Live dashboard",
-    "shot2.cap":"Remote control",
-    "shot3.cap":"Live map",
-    "shot4.cap":"Sound settings",
+    "hero.kicker":"A monitoring app for families and organizations",
+    "shot1.exp":"Battery, connectivity and last-seen time — all in one glance.",
+    "shot2.exp":"Lock the device, start tracking, or enable GPS with a single tap.",
+    "shot3.exp":"See exactly where the device is, updated in real time on the map.",
+    "shot4.exp":"Adjust ring, media and alarm volume — without ever touching the phone.",
+    "comp.eyebrow":"Why Vedetor",
+    "comp.title":"Not all monitoring apps are built the same way",
+    "comp.sub":"Here's what typically gets left out of the average monitoring app.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"Typical apps",
+    "comp.row1":"Works without internet (SMS fallback)",
+    "comp.row2":"Full remote control (lock, wipe, sound)",
+    "comp.row3":"Transparent to the monitored device",
+    "comp.row4":"Local/domestic infrastructure option",
+    "comp.rare":"Rarely",
+    "sec.eyebrow":"Security &amp; Privacy",
+    "sec.title":"Your trust is the whole point",
+    "sec.p1t":"Never hidden",
+    "sec.p1b":"The monitored device always displays that monitoring is active — there is no silent or hidden mode.",
+    "sec.p2t":"Your data is never sold",
+    "sec.p2b":"Location and status data flow only between the monitored device and its linked guardian — never to advertisers or third parties.",
+    "sec.p3t":"Choose where your data lives",
+    "sec.p3b":"Data is stored on Firebase by default, with an optional domestic server infrastructure inside Iran for Cafe Bazaar installs.",
+    "sec.link":"Read the full Privacy Policy →",
   },
   fa: {
     "nav.features":"ویژگی‌ها",
@@ -479,13 +586,30 @@ const translations = {
     "cta.title":"همین امروز شروع کن",
     "cta.body":"پلن رایگان همیشه در دسترسه. هر وقت خواستی به مجموعه‌ی کامل ابزارها ارتقا بده.",
     "cta.button":"دیدن قیمت‌ها ←",
-    "shots.eyebrow":"در عمل ببینیدش",
-    "shots.title":"صفحات واقعی، از خودِ برنامه",
-    "shots.sub":"بدون شبیه‌سازی — دقیقاً همینه که روی گوشی خودتون می‌بینید.",
-    "shot1.cap":"داشبورد زنده",
-    "shot2.cap":"کنترل از راه دور",
-    "shot3.cap":"نقشه زنده",
-    "shot4.cap":"تنظیمات صدا",
+    "hero.kicker":"یک اپ نظارت برای خانواده‌ها و سازمان‌ها",
+    "shot1.exp":"باتری، اتصال و آخرین اتصال — همه در یک نگاه.",
+    "shot2.exp":"قفل کردن دستگاه، شروع ردیابی، یا فعال کردن GPS با یک ضربه.",
+    "shot3.exp":"دقیقاً ببینید دستگاه کجاست، به‌صورت زنده روی نقشه.",
+    "shot4.exp":"تنظیم صدای زنگ، مدیا و آلارم — بدون این‌که دستت به گوشی برسه.",
+    "comp.eyebrow":"چرا Vedetor",
+    "comp.title":"همه‌ی اپ‌های نظارتی یک‌جور ساخته نشدن",
+    "comp.sub":"این‌ها چیزهاییه که معمولاً توی اپ‌های نظارتی معمولی نیستن.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"اپ‌های معمولی",
+    "comp.row1":"کار بدون اینترنت (جایگزین پیامکی)",
+    "comp.row2":"کنترل کامل از راه دور (قفل، پاک‌سازی، صدا)",
+    "comp.row3":"شفاف برای دستگاه زیرنظر",
+    "comp.row4":"گزینه‌ی زیرساخت داخلی",
+    "comp.rare":"به‌ندرت",
+    "sec.eyebrow":"امنیت و حریم خصوصی",
+    "sec.title":"اعتماد شما، کل هدفه",
+    "sec.p1t":"هرگز مخفی نیست",
+    "sec.p1b":"دستگاه زیرنظر همیشه نشون می‌ده که نظارت فعاله — هیچ حالت مخفی یا بی‌صدایی وجود نداره.",
+    "sec.p2t":"داده‌ی شما هرگز فروخته نمی‌شه",
+    "sec.p2b":"داده‌ی موقعیت و وضعیت فقط بین دستگاه زیرنظر و سرپرست مرتبطش جریان داره — هرگز به تبلیغ‌کننده‌ها یا شخص ثالث نمی‌ره.",
+    "sec.p3t":"انتخاب کنید داده‌تون کجا زندگی کنه",
+    "sec.p3b":"داده‌ها به‌طور پیش‌فرض روی Firebase ذخیره می‌شن، با گزینه‌ی اختیاری زیرساخت سرور داخلی در ایران برای نصب‌های کافه‌بازار.",
+    "sec.link":"مطالعه‌ی کامل سیاست حریم خصوصی ←",
   },
   ar: {
     "nav.features":"الميزات",
@@ -561,13 +685,30 @@ const translations = {
     "cta.title":"ابدأ اليوم",
     "cta.body":"الخطة المجانية متاحة دائمًا. قم بالترقية عندما تحتاج إلى مجموعة الأدوات الكاملة.",
     "cta.button":"عرض الأسعار ←",
-    "shots.eyebrow":"شاهده أثناء العمل",
-    "shots.title":"شاشات حقيقية، من التطبيق الفعلي",
-    "shots.sub":"لا نماذج — هذا بالضبط ما ستراه على هاتفك.",
-    "shot1.cap":"لوحة التحكم اللحظية",
-    "shot2.cap":"التحكم عن بُعد",
-    "shot3.cap":"خريطة لحظية",
-    "shot4.cap":"إعدادات الصوت",
+    "hero.kicker":"تطبيق مراقبة للعائلات والمؤسسات",
+    "shot1.exp":"البطارية والاتصال وآخر ظهور — كل ذلك في لمحة واحدة.",
+    "shot2.exp":"اقفل الجهاز أو ابدأ التتبع أو فعّل GPS بلمسة واحدة.",
+    "shot3.exp":"شاهد بالضبط مكان الجهاز، محدّثًا لحظيًا على الخريطة.",
+    "shot4.exp":"اضبط صوت الرنين والوسائط والمنبه — دون لمس الهاتف مطلقًا.",
+    "comp.eyebrow":"لماذا Vedetor",
+    "comp.title":"ليست كل تطبيقات المراقبة مبنية بنفس الطريقة",
+    "comp.sub":"إليك ما يُترك عادةً في تطبيق المراقبة العادي.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"التطبيقات التقليدية",
+    "comp.row1":"يعمل بدون إنترنت (بديل SMS)",
+    "comp.row2":"تحكم كامل عن بُعد (قفل، مسح، صوت)",
+    "comp.row3":"شفاف بالنسبة للجهاز الخاضع للمراقبة",
+    "comp.row4":"خيار البنية التحتية المحلية",
+    "comp.rare":"نادرًا",
+    "sec.eyebrow":"الأمان والخصوصية",
+    "sec.title":"ثقتك هي بيت القصيد",
+    "sec.p1t":"لا يُخفى أبدًا",
+    "sec.p1b":"يعرض الجهاز الخاضع للمراقبة دائمًا أن المراقبة نشطة — لا يوجد وضع صامت أو مخفي.",
+    "sec.p2t":"بياناتك لا تُباع أبدًا",
+    "sec.p2b":"تتدفق بيانات الموقع والحالة فقط بين الجهاز الخاضع للمراقبة وولي أمره المرتبط — أبدًا إلى المعلنين أو أطراف ثالثة.",
+    "sec.p3t":"اختر أين تعيش بياناتك",
+    "sec.p3b":"تُخزَّن البيانات على Firebase افتراضيًا، مع خيار بنية تحتية محلية داخل إيران لتثبيتات كافه بازار.",
+    "sec.link":"اقرأ سياسة الخصوصية الكاملة ←",
   },
   tr: {
     "nav.features":"Özellikler",
@@ -643,13 +784,30 @@ const translations = {
     "cta.title":"Bugün başlayın",
     "cta.body":"Ücretsiz plan her zaman kullanılabilir. Tam araç setine ihtiyaç duyduğunuzda yükseltin.",
     "cta.button":"Fiyatları gör →",
-    "shots.eyebrow":"Kullanımda görün",
-    "shots.title":"Gerçek uygulamadan gerçek ekranlar",
-    "shots.sub":"Simülasyon yok — telefonunuzda göreceğiniz tam olarak budur.",
-    "shot1.cap":"Canlı panel",
-    "shot2.cap":"Uzaktan kontrol",
-    "shot3.cap":"Canlı harita",
-    "shot4.cap":"Ses ayarları",
+    "hero.kicker":"Aileler ve kurumlar için bir izleme uygulaması",
+    "shot1.exp":"Pil, bağlantı ve son görülme zamanı — hepsi tek bakışta.",
+    "shot2.exp":"Cihazı kilitleyin, takibi başlatın veya GPS'i tek dokunuşla etkinleştirin.",
+    "shot3.exp":"Cihazın tam olarak nerede olduğunu haritada anlık görün.",
+    "shot4.exp":"Zil, medya ve alarm sesini — telefona hiç dokunmadan ayarlayın.",
+    "comp.eyebrow":"Neden Vedetor",
+    "comp.title":"Tüm izleme uygulamaları aynı şekilde inşa edilmez",
+    "comp.sub":"Ortalama bir izleme uygulamasında genellikle eksik olan şeyler bunlar.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"Tipik uygulamalar",
+    "comp.row1":"İnternetsiz çalışır (SMS yedeği)",
+    "comp.row2":"Tam uzaktan kontrol (kilit, silme, ses)",
+    "comp.row3":"İzlenen cihaz için şeffaf",
+    "comp.row4":"Yerel/ülke içi altyapı seçeneği",
+    "comp.rare":"Nadiren",
+    "sec.eyebrow":"Güvenlik ve Gizlilik",
+    "sec.title":"Güveniniz her şeyin özüdür",
+    "sec.p1t":"Asla gizli değil",
+    "sec.p1b":"İzlenen cihaz her zaman izlemenin etkin olduğunu gösterir — sessiz veya gizli bir mod yoktur.",
+    "sec.p2t":"Verileriniz asla satılmaz",
+    "sec.p2b":"Konum ve durum verileri yalnızca izlenen cihaz ile bağlı velisi arasında akar — reklamverenlere veya üçüncü taraflara asla gitmez.",
+    "sec.p3t":"Verilerinizin nerede barınacağını seçin",
+    "sec.p3b":"Veriler varsayılan olarak Firebase'de saklanır; Cafe Bazaar kurulumları için İran içinde isteğe bağlı yerel sunucu altyapısı mevcuttur.",
+    "sec.link":"Tam Gizlilik Politikasını okuyun →",
   },
   es: {
     "nav.features":"Funciones",
@@ -725,13 +883,30 @@ const translations = {
     "cta.title":"Empieza hoy",
     "cta.body":"El plan gratuito siempre está disponible. Actualiza cuando necesites el conjunto completo de herramientas.",
     "cta.button":"Ver precios →",
-    "shots.eyebrow":"Míralo en acción",
-    "shots.title":"Pantallas reales, de la app real",
-    "shots.sub":"Sin simulaciones — esto es exactamente lo que verás en tu propio teléfono.",
-    "shot1.cap":"Panel en vivo",
-    "shot2.cap":"Control remoto",
-    "shot3.cap":"Mapa en vivo",
-    "shot4.cap":"Configuración de sonido",
+    "hero.kicker":"Una app de monitoreo para familias y organizaciones",
+    "shot1.exp":"Batería, conectividad y última conexión — todo de un vistazo.",
+    "shot2.exp":"Bloquea el dispositivo, inicia el seguimiento o activa el GPS con un toque.",
+    "shot3.exp":"Ve exactamente dónde está el dispositivo, actualizado en tiempo real en el mapa.",
+    "shot4.exp":"Ajusta el volumen del timbre, multimedia y alarma — sin tocar el teléfono.",
+    "comp.eyebrow":"Por qué Vedetor",
+    "comp.title":"No todas las apps de monitoreo se construyen igual",
+    "comp.sub":"Esto es lo que suele faltar en una app de monitoreo promedio.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"Apps típicas",
+    "comp.row1":"Funciona sin internet (respaldo por SMS)",
+    "comp.row2":"Control remoto total (bloqueo, borrado, sonido)",
+    "comp.row3":"Transparente para el dispositivo monitoreado",
+    "comp.row4":"Opción de infraestructura local",
+    "comp.rare":"Raramente",
+    "sec.eyebrow":"Seguridad y Privacidad",
+    "sec.title":"Tu confianza es todo el sentido de esto",
+    "sec.p1t":"Nunca oculto",
+    "sec.p1b":"El dispositivo monitoreado siempre muestra que el monitoreo está activo — no hay modo silencioso u oculto.",
+    "sec.p2t":"Tus datos nunca se venden",
+    "sec.p2b":"Los datos de ubicación y estado solo fluyen entre el dispositivo monitoreado y su tutor vinculado — nunca a anunciantes o terceros.",
+    "sec.p3t":"Elige dónde viven tus datos",
+    "sec.p3b":"Los datos se almacenan en Firebase de forma predeterminada, con una infraestructura de servidor local opcional dentro de Irán para instalaciones de Cafe Bazaar.",
+    "sec.link":"Lee la Política de Privacidad completa →",
   },
   zh: {
     "nav.features":"功能",
@@ -807,13 +982,30 @@ const translations = {
     "cta.title":"今天就开始",
     "cta.body":"免费版始终可用。当您需要完整功能时随时升级。",
     "cta.button":"查看价格 →",
-    "shots.eyebrow":"实际效果一览",
-    "shots.title":"真实应用界面截图",
-    "shots.sub":"绝非效果图——这正是您手机上将看到的真实界面。",
-    "shot1.cap":"实时仪表盘",
-    "shot2.cap":"远程控制",
-    "shot3.cap":"实时地图",
-    "shot4.cap":"声音设置",
+    "hero.kicker":"面向家庭与组织的监控应用",
+    "shot1.exp":"电池、网络连接与最后在线时间——一目了然。",
+    "shot2.exp":"轻点即可锁定设备、开始追踪或启用GPS。",
+    "shot3.exp":"在地图上实时查看设备的确切位置。",
+    "shot4.exp":"无需接触手机即可调节铃声、媒体和闹钟音量。",
+    "comp.eyebrow":"为什么选择 Vedetor",
+    "comp.title":"并非所有监控应用都以同样方式打造",
+    "comp.sub":"以下是普通监控应用通常缺少的功能。",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"普通应用",
+    "comp.row1":"无网络也可运行（短信备用方案）",
+    "comp.row2":"完整远程控制（锁定、清除数据、声音）",
+    "comp.row3":"对受监控设备完全透明",
+    "comp.row4":"本地/境内基础设施选项",
+    "comp.rare":"很少见",
+    "sec.eyebrow":"安全与隐私",
+    "sec.title":"您的信任才是根本所在",
+    "sec.p1t":"绝不隐藏",
+    "sec.p1b":"受监控设备始终会显示监控处于启用状态——不存在静默或隐藏模式。",
+    "sec.p2t":"您的数据绝不会被出售",
+    "sec.p2b":"位置和状态数据仅在受监控设备与其关联监护人之间流动——绝不会流向广告商或第三方。",
+    "sec.p3t":"选择您数据的存储位置",
+    "sec.p3b":"默认情况下数据存储在 Firebase 上，对于通过 Cafe Bazaar 安装的用户，可选择使用伊朗境内的本地服务器基础设施。",
+    "sec.link":"阅读完整隐私政策 →",
   },
   fr: {
     "nav.features":"Fonctionnalités",
@@ -889,13 +1081,30 @@ const translations = {
     "cta.title":"Commencez aujourd'hui",
     "cta.body":"Le plan gratuit est toujours disponible. Passez à un forfait supérieur dès que vous avez besoin de la boîte à outils complète.",
     "cta.button":"Voir les tarifs →",
-    "shots.eyebrow":"Voyez-le en action",
-    "shots.title":"De vrais écrans, tirés de la véritable application",
-    "shots.sub":"Aucune maquette — c'est exactement ce que vous verrez sur votre propre téléphone.",
-    "shot1.cap":"Tableau de bord en direct",
-    "shot2.cap":"Contrôle à distance",
-    "shot3.cap":"Carte en direct",
-    "shot4.cap":"Paramètres audio",
+    "hero.kicker":"Une application de surveillance pour les familles et les organisations",
+    "shot1.exp":"Batterie, connectivité et dernière connexion — en un coup d'œil.",
+    "shot2.exp":"Verrouillez l'appareil, démarrez le suivi ou activez le GPS d'un simple geste.",
+    "shot3.exp":"Voyez exactement où se trouve l'appareil, mis à jour en temps réel sur la carte.",
+    "shot4.exp":"Réglez le volume de la sonnerie, des médias et de l'alarme — sans jamais toucher au téléphone.",
+    "comp.eyebrow":"Pourquoi Vedetor",
+    "comp.title":"Toutes les applications de surveillance ne sont pas conçues de la même façon",
+    "comp.sub":"Voici ce qui manque généralement dans une application de surveillance classique.",
+    "comp.colVedetor":"Vedetor",
+    "comp.colTypical":"Applications classiques",
+    "comp.row1":"Fonctionne sans internet (repli SMS)",
+    "comp.row2":"Contrôle à distance complet (verrouillage, effacement, son)",
+    "comp.row3":"Transparent pour l'appareil surveillé",
+    "comp.row4":"Option d'infrastructure locale",
+    "comp.rare":"Rarement",
+    "sec.eyebrow":"Sécurité et confidentialité",
+    "sec.title":"Votre confiance est tout l'enjeu",
+    "sec.p1t":"Jamais caché",
+    "sec.p1b":"L'appareil surveillé affiche toujours que la surveillance est active — il n'existe aucun mode silencieux ou caché.",
+    "sec.p2t":"Vos données ne sont jamais vendues",
+    "sec.p2b":"Les données de position et d'état ne circulent qu'entre l'appareil surveillé et son tuteur associé — jamais vers des annonceurs ou des tiers.",
+    "sec.p3t":"Choisissez où vivent vos données",
+    "sec.p3b":"Les données sont stockées par défaut sur Firebase, avec une infrastructure de serveur local optionnelle en Iran pour les installations via Cafe Bazaar.",
+    "sec.link":"Lire la politique de confidentialité complète →",
   },
 };
 
