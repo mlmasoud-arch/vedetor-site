@@ -2,89 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vedetor — Presence, Protection, Peace of Mind</title>
-<meta name="description" content="Vedetor is family protection and device monitoring built around presence, live location, safe zones, screen time, battery status and alerts.">
-<meta name="keywords" content="Vedetor, parental control, family protection, family monitoring, device monitoring, live location, GPS tracker, safe zones, screen time, battery monitoring, emergency alerts">
-<link rel="canonical" href="https://www.vedetor.com/">
-<meta property="og:title" content="Vedetor — Presence, Protection, Peace of Mind">
-<meta property="og:description" content="A modern family protection experience built around connection, safety and peace of mind.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.vedetor.com/">
-<meta name="theme-color" content="#030406">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vedetor – Presence, Protection, Peace of Mind</title>
+<meta name="description" content="Vedetor helps families stay connected with live location, safe zones, screen time, battery status and alerts.">
+<meta name="theme-color" content="#02040a">
 <style>
-:root{--bg:#030406;--text:#f5f7fb;--muted:#9da5b5;--blue:#5ca9ff;--gold:#f4c44e;--line:rgba(255,255,255,.1);--font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{background:var(--bg);scroll-behavior:auto}body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden}a{color:inherit;text-decoration:none}
-.hero{position:relative;height:540vh;background:#030406}.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#0a1422 0,#030406 48%,#000 100%)}
-.hero-glow{position:absolute;width:70vw;height:70vw;max-width:1000px;max-height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(55,130,220,.12),transparent 68%);filter:blur(20px);pointer-events:none}.video-wrap{position:relative;height:min(92vh,900px);width:min(52vh,520px);z-index:2;display:flex;align-items:center;justify-content:center}.hero-video{width:100%;height:100%;object-fit:contain;display:block;filter:saturate(1.03) contrast(1.03);will-change:contents}.video-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.5) 100%)}
-.hero-brand{position:absolute;z-index:5;left:50%;bottom:8vh;transform:translateX(-50%);text-align:center;white-space:nowrap;opacity:0;pointer-events:none}.hero-brand h1{font-size:clamp(1.8rem,4vw,3.5rem);letter-spacing:.22em;font-weight:700}.hero-brand p{margin-top:10px;color:#d2d7e1;font-size:clamp(.75rem,1.2vw,1rem);letter-spacing:.12em}.scroll-cue{position:absolute;z-index:6;left:50%;bottom:28px;transform:translateX(-50%);color:#8f98a8;font-size:10px;letter-spacing:.28em;text-transform:uppercase;display:flex;flex-direction:column;gap:9px;align-items:center;opacity:.8}.scroll-cue span{width:1px;height:42px;background:linear-gradient(#8f98a8,transparent)}
-.scene-label{position:absolute;z-index:4;opacity:0;max-width:250px}.scene-label .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}.scene-label h2{font-size:clamp(1rem,2vw,1.5rem);font-weight:500;line-height:1.25}.scene-label p{color:var(--muted);font-size:.82rem;line-height:1.6;margin-top:8px}.label-left{left:7vw;top:50%;transform:translateY(-50%)}.label-right{right:7vw;top:50%;transform:translateY(-50%);text-align:right}.progress{position:absolute;z-index:6;right:28px;top:50%;transform:translateY(-50%);height:100px;width:1px;background:rgba(255,255,255,.12)}.progress i{display:block;width:1px;height:0;background:var(--blue)}
-.content{background:linear-gradient(#030406,#070b12);position:relative}.section{padding:14vh 7vw;border-top:1px solid rgba(255,255,255,.05)}.inner{max-width:1180px;margin:auto}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:55px}.section-head h2{font-size:clamp(2rem,4vw,4.5rem);letter-spacing:-.04em;font-weight:500}.section-head p{max-width:430px;color:var(--muted);line-height:1.7}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{min-height:250px;padding:28px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));display:flex;flex-direction:column;justify-content:end;transition:transform .35s,border-color .35s}.card:hover{transform:translateY(-5px);border-color:rgba(92,169,255,.35)}.card .num{color:var(--blue);font-size:.72rem;letter-spacing:.18em;margin-bottom:auto}.card h3{font-size:1.2rem;margin-bottom:10px}.card p{color:var(--muted);line-height:1.65;font-size:.92rem}.cta{padding:15vh 7vw;text-align:center}.cta h2{font-size:clamp(2.2rem,6vw,6rem);font-weight:500;letter-spacing:-.05em}.cta p{color:var(--muted);margin:20px auto 32px;max-width:560px;line-height:1.7}.button{display:inline-flex;padding:14px 24px;border-radius:999px;border:1px solid rgba(244,196,78,.45);background:rgba(244,196,78,.1);color:#f8d978}.footer{padding:35px 7vw 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}.footer-links{display:flex;gap:20px}
-@media(max-width:800px){.hero{height:470vh}.video-wrap{width:100vw;height:100vh}.hero-video{width:100%;height:100%;object-fit:contain}.scene-label{left:20px;right:20px;top:auto;bottom:16vh;transform:none;text-align:center;max-width:none}.label-right{left:20px;right:20px;text-align:center}.hero-brand{bottom:9vh}.scroll-cue{bottom:16px}.progress{right:12px}.grid{grid-template-columns:1fr}.section{padding:11vh 20px}.section-head{display:block;margin-bottom:35px}.section-head p{margin-top:18px}.footer-inner{display:block}.footer-links{margin-top:14px}}
-@media(prefers-reduced-motion:reduce){.hero{height:100vh}.scroll-cue{display:none}.scene-label{opacity:0!important}.hero-brand{opacity:1!important}}
+*{box-sizing:border-box}html,body{margin:0;background:#02040a;color:#f7f8fc;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow-x:hidden}.hero{height:520vh;position:relative}.pin{position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden;background:#02040a}.video-wrap{position:absolute;inset:0;display:grid;place-items:center}.hero-video{height:100%;width:100%;object-fit:cover;object-position:center;background:#02040a;display:block;transform:translateZ(0)}.shade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 25%,rgba(2,4,10,.12) 60%,rgba(2,4,10,.58) 100%)}.copy{position:absolute;inset:auto 0 7vh;z-index:2;text-align:center;pointer-events:none;opacity:0;transform:translateY(18px);padding:0 20px}.brand{font-size:clamp(2rem,6vw,4.5rem);font-weight:650;letter-spacing:.22em;margin-left:.22em}.tagline{margin-top:12px;color:rgba(247,248,252,.72);font-size:clamp(.78rem,1.5vw,1rem);letter-spacing:.18em;text-transform:uppercase}.hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:opacity .4s}.progress{position:absolute;right:22px;top:50%;width:2px;height:72px;transform:translateY(-50%);background:rgba(255,255,255,.12);z-index:3}.progress i{display:block;width:100%;height:0;background:rgba(255,255,255,.75);transform-origin:top}.after{min-height:100vh;background:#02040a;padding:16vh 8vw}.after-inner{max-width:1100px;margin:auto}.after h2{font-size:clamp(2rem,5vw,4rem);margin:0 0 20px}.after p{max-width:650px;color:#9da5bb;line-height:1.7}.reduced .hero{height:auto}.reduced .pin{position:relative;height:auto}.reduced .hero-video{height:auto;aspect-ratio:9/16}.reduced .copy{position:relative;inset:auto;padding:60px 20px;opacity:1;transform:none}
+@media (min-width:900px){.hero-video{object-fit:contain;width:auto;max-width:100%;background:#02040a}.shade{background:radial-gradient(circle at 50% 45%,transparent 28%,rgba(2,4,10,.25) 72%,rgba(2,4,10,.7) 100%)}}
+@media (prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:relative}.hero-video{height:auto;aspect-ratio:9/16}.copy{opacity:1;transform:none;position:relative;inset:auto;padding:60px 20px}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vedetor","applicationCategory":"SecurityApplication","operatingSystem":"Android","description":"Family protection and device monitoring with live location, safe zones, screen time, battery status and alerts.","url":"https://www.vedetor.com/"}
-</script>
 </head>
 <body>
 <main>
 <section class="hero" id="hero">
- <div class="hero-sticky">
-  <div class="hero-glow"></div>
-  <div class="video-wrap">
-   <video id="heroVideo" class="hero-video" muted playsinline preload="auto" aria-label="Vedetor cinematic brand film">
-    <source src="assets/hero/vedetor-hero.mp4" type="video/mp4">
-   </video>
-   <div class="video-vignette"></div>
+  <div class="pin">
+    <div class="video-wrap"><video id="heroVideo" class="hero-video" muted playsinline preload="auto" webkit-playsinline poster="assets/hero/hero-poster.jpg"><source src="assets/hero/vedetor-hero.mp4" type="video/mp4"></video></div>
+    <div class="shade"></div>
+    <div class="copy" id="copy"><div class="brand">VEDETOR</div><div class="tagline">Presence. Protection. Peace of Mind.</div></div>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="hint" id="hint">Scroll to explore</div>
   </div>
-  <div class="scene-label label-left" id="labelFamily"><div class="eyebrow">Connection</div><h2>Protection without distance.</h2><p>A family stays connected while each person keeps moving forward.</p></div>
-  <div class="scene-label label-right" id="labelLogo"><div class="eyebrow">Vedetor</div><h2>Presence. Protection. Peace of Mind.</h2><p>One quiet connection, built around the people who matter.</p></div>
-  <div class="hero-brand" id="heroBrand"><h1>VEDETOR</h1><p>Presence. Protection. Peace of Mind.</p></div>
-  <div class="progress"><i id="progressBar"></i></div>
-  <div class="scroll-cue">Scroll<span></span></div>
- </div>
 </section>
-<section class="content">
- <section class="section"><div class="inner"><div class="section-head"><h2>Family protection,<br>without the noise.</h2><p>Vedetor brings the signals that matter into one calm experience: location, safe zones, device status, screen time and alerts.</p></div><div class="grid">
-  <article class="card"><div class="num">01 / LOCATION</div><h3>Live Location</h3><p>Know where a linked device is when location sharing is active.</p></article>
-  <article class="card"><div class="num">02 / SAFETY</div><h3>Safe Zones</h3><p>Define places that matter and turn arrivals into simple safety signals.</p></article>
-  <article class="card"><div class="num">03 / DEVICE</div><h3>Battery & Status</h3><p>See important device status without filling the experience with noise.</p></article>
- </div></div></section>
- <section class="section"><div class="inner"><div class="section-head"><h2>Built for families.<br>Ready for organizations.</h2><p>The same monitoring foundation can support family devices and structured device supervision for organizations.</p></div><div class="grid">
-  <article class="card"><div class="num">04 / SCREEN TIME</div><h3>Healthy Habits</h3><p>Turn device use into useful information for better family conversations.</p></article>
-  <article class="card"><div class="num">05 / ALERTS</div><h3>Important Alerts</h3><p>Surface events that need attention instead of forcing constant checking.</p></article>
-  <article class="card"><div class="num">06 / PRIVACY</div><h3>Transparent by Design</h3><p>Monitoring is visible on the supervised device. No hidden monitoring mode.</p></article>
- </div></div></section>
- <section class="cta"><h2>Stay close.<br>Without being there.</h2><p>Vedetor turns distance into a quiet sense of presence and protection.</p><a class="button" href="pricing.html">Explore Vedetor</a></section>
-</section>
+<section class="after"><div class="after-inner"><h2>Protection that feels like presence.</h2><p>Stay connected with the people who matter. Vedetor brings live location, safe zones, screen time, battery status and alerts into one calm family experience.</p></div></section>
 </main>
-<footer class="footer"><div class="footer-inner"><div>© 2026 Vedetor · Presence, Protection, Peace of Mind.</div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="pricing.html">Pricing</a></div></div></footer>
 <script>
-(() => {
- const video=document.getElementById('heroVideo');
- const hero=document.getElementById('hero');
- const family=document.getElementById('labelFamily');
- const logo=document.getElementById('labelLogo');
- const brand=document.getElementById('heroBrand');
- const bar=document.getElementById('progressBar');
- let targetTime=0, rafId=0, ready=false;
- const setTime=()=>{ if(!ready || !video.duration) return; if(Math.abs(video.currentTime-targetTime)>.012) video.currentTime=targetTime; rafId=requestAnimationFrame(setTime); };
- video.addEventListener('loadedmetadata',()=>{ready=true;video.currentTime=0;cancelAnimationFrame(rafId);rafId=requestAnimationFrame(setTime);});
- video.addEventListener('error',()=>console.warn('Vedetor hero video could not be loaded.'));
- gsap.registerPlugin(ScrollTrigger);
- const lenis=new Lenis({duration:1.05,easing:t=>1-Math.pow(2,-10*t),smoothWheel:true,syncTouch:true});
- function loop(t){lenis.raf(t);requestAnimationFrame(loop)} requestAnimationFrame(loop);
- const state={p:0};
- gsap.to(state,{p:1,ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom bottom',scrub:0.08,onUpdate:self=>{const p=self.progress;targetTime=(video.duration||8)*p;bar.style.height=(p*100)+'%';
-   gsap.set(family,{opacity:p>.16&&p<.58?1:0});
-   gsap.set(logo,{opacity:p>.55&&p<.82?1:0});
-   gsap.set(brand,{opacity:p>.80?Math.min(1,(p-.80)/.08):0});
- }} });
- window.addEventListener('load',()=>ScrollTrigger.refresh());
+(function(){
+  const video=document.getElementById('heroVideo');
+  const hero=document.getElementById('hero');
+  const copy=document.getElementById('copy');
+  const bar=document.getElementById('bar');
+  const hint=document.getElementById('hint');
+  let target=0, current=0, ready=false, rafId=0;
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced)return;
+
+  function getProgress(){
+    const r=hero.getBoundingClientRect();
+    const max=hero.offsetHeight-window.innerHeight;
+    return clamp(-r.top/Math.max(1,max),0,1);
+  }
+
+  function render(){
+    current += (target-current)*0.16;
+    if(Math.abs(target-current)<0.00015) current=target;
+    if(ready && video.duration){
+      const t=current*video.duration;
+      if(Math.abs(video.currentTime-t)>0.012){
+        video.currentTime=t;
+      }
+    }
+    bar.style.height=(current*100)+'%';
+    const reveal=clamp((current-.78)/.15,0,1);
+    copy.style.opacity=reveal;
+    copy.style.transform='translateY('+(18*(1-reveal))+'px)';
+    hint.style.opacity=String(1-clamp(current/.08,0,1));
+    rafId=requestAnimationFrame(render);
+  }
+
+  function onScroll(){target=getProgress();}
+  video.addEventListener('loadedmetadata',()=>{ready=true;video.currentTime=0;});
+  video.addEventListener('canplay',()=>{ready=true;});
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  onScroll();
+  render();
 })();
 </script>
 </body>
