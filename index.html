@@ -10,63 +10,75 @@
 *{box-sizing:border-box}html,body{margin:0;background:#02040a;color:#f7f8fc;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{overflow-x:hidden}.hero{height:520vh;position:relative}.pin{position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden;background:#02040a}.video-wrap{position:absolute;inset:0;display:grid;place-items:center}.hero-video{height:100%;width:100%;object-fit:cover;object-position:center;background:#02040a;display:block;transform:translateZ(0)}.shade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 45%,transparent 25%,rgba(2,4,10,.12) 60%,rgba(2,4,10,.58) 100%)}.copy{position:absolute;inset:auto 0 7vh;z-index:2;text-align:center;pointer-events:none;opacity:0;transform:translateY(18px);padding:0 20px}.brand{font-size:clamp(2rem,6vw,4.5rem);font-weight:650;letter-spacing:.22em;margin-left:.22em}.tagline{margin-top:12px;color:rgba(247,248,252,.72);font-size:clamp(.78rem,1.5vw,1rem);letter-spacing:.18em;text-transform:uppercase}.hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:opacity .4s}.progress{position:absolute;right:22px;top:50%;width:2px;height:72px;transform:translateY(-50%);background:rgba(255,255,255,.12);z-index:3}.progress i{display:block;width:100%;height:0;background:rgba(255,255,255,.75);transform-origin:top}.after{min-height:100vh;background:#02040a;padding:16vh 8vw}.after-inner{max-width:1100px;margin:auto}.after h2{font-size:clamp(2rem,5vw,4rem);margin:0 0 20px}.after p{max-width:650px;color:#9da5bb;line-height:1.7}.reduced .hero{height:auto}.reduced .pin{position:relative;height:auto}.reduced .hero-video{height:auto;aspect-ratio:9/16}.reduced .copy{position:relative;inset:auto;padding:60px 20px;opacity:1;transform:none}
 @media (min-width:900px){.hero-video{object-fit:contain;width:auto;max-width:100%;background:#02040a}.shade{background:radial-gradient(circle at 50% 45%,transparent 28%,rgba(2,4,10,.25) 72%,rgba(2,4,10,.7) 100%)}}
 @media (prefers-reduced-motion:reduce){.hero{height:auto}.pin{position:relative}.hero-video{height:auto;aspect-ratio:9/16}.copy{opacity:1;transform:none;position:relative;inset:auto;padding:60px 20px}}
+
+.scene-label{position:absolute;z-index:4;max-width:240px;opacity:0;pointer-events:none}
+.scene-label .kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#62adff;margin-bottom:8px}
+.scene-label h3{font-size:clamp(1rem,1.8vw,1.35rem);line-height:1.15;margin:0 0 7px}
+.scene-label p{font-size:12px;line-height:1.5;color:rgba(245,247,255,.62);margin:0}
+.label-left{left:7vw;top:42%}.label-right{right:7vw;top:42%;text-align:right}
+
+.after{background:linear-gradient(to bottom,#02040a,#050914);border-top:1px solid rgba(255,255,255,.09);padding:14vh 7vw 10vh}
+.after-inner{max-width:1180px;margin:auto}.intro{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end;margin-bottom:80px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#62adff;margin-bottom:16px}
+.intro h2{font-size:clamp(2.2rem,5vw,5rem);line-height:.98;letter-spacing:-.04em;margin:0}.intro p{color:#9aa4bc;line-height:1.75;max-width:500px;margin:0}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.feature{position:relative;min-height:310px;border:1px solid rgba(255,255,255,.09);border-radius:28px;background:radial-gradient(circle at 20% 10%,rgba(98,173,255,.11),transparent 38%),rgba(10,16,28,.72);padding:30px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.feature.gold{background:radial-gradient(circle at 75% 15%,rgba(217,173,98,.1),transparent 38%),rgba(10,16,28,.72)}.feature .icon{width:42px;height:42px;border:1px solid rgba(255,255,255,.12);border-radius:13px;display:grid;place-items:center;margin-bottom:auto;color:#62adff;font-size:18px}.feature.gold .icon{color:#d9ad62}
+.feature h3{font-size:clamp(1.35rem,2.4vw,2rem);margin:0 0 9px}.feature p{color:#9aa4bc;line-height:1.6;max-width:480px;margin:0}
+.cta{margin-top:18px;padding:70px 30px;border:1px solid rgba(255,255,255,.09);border-radius:30px;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(98,173,255,.13),transparent 48%),#050914}
+.cta h2{font-size:clamp(2rem,4vw,3.8rem);margin:0 0 14px;letter-spacing:-.03em}.cta p{color:#9aa4bc;margin:0 auto 26px;max-width:600px;line-height:1.7}
+.btn{display:inline-flex;text-decoration:none;padding:13px 23px;border-radius:999px;border:1px solid rgba(255,255,255,.14);margin:4px}.btn.primary{background:linear-gradient(110deg,#62adff,#286eea);border-color:transparent;color:#fff}
+@media(max-width:850px){.intro{grid-template-columns:1fr;gap:28px}.features{grid-template-columns:1fr}.scene-label{max-width:190px}.label-left{left:5vw}.label-right{right:5vw}}
 </style>
 </head>
 <body>
 <main>
 <section class="hero" id="hero">
   <div class="pin">
-    <div class="video-wrap"><video id="heroVideo" class="hero-video" muted playsinline preload="auto" webkit-playsinline poster="assets/hero/hero-poster.jpg"><source src="assets/hero/vedetor-hero.mp4" type="video/mp4"></video></div>
+    <div class="video-wrap"><video id="heroVideo" class="hero-video" muted playsinline webkit-playsinline preload="auto" poster="assets/hero/hero-poster.jpg"><source src="assets/hero/vedetor-hero.mp4" type="video/mp4"></video></div>
     <div class="shade"></div>
+    <div class="scene-label label-left" data-at="0.22"><div class="kicker">Connection</div><h3>Close, even when you're apart.</h3><p>Vedetor keeps the people who matter within reach.</p></div>
+    <div class="scene-label label-right" data-at="0.38"><div class="kicker">Family</div><h3>One child. Two parents. One shared connection.</h3><p>Designed around presence, not constant surveillance.</p></div>
+    <div class="scene-label label-left" data-at="0.54"><div class="kicker">Protection</div><h3>Know what matters.</h3><p>Location, safe zones and alerts when they are useful.</p></div>
+    <div class="scene-label label-right" data-at="0.68"><div class="kicker">Trust</div><h3>Protection becomes presence.</h3><p>A family connection built to feel calm.</p></div>
+    
     <div class="copy" id="copy"><div class="brand">VEDETOR</div><div class="tagline">Presence. Protection. Peace of Mind.</div></div>
     <div class="progress"><i id="bar"></i></div>
     <div class="hint" id="hint">Scroll to explore</div>
   </div>
 </section>
-<section class="after"><div class="after-inner"><h2>Protection that feels like presence.</h2><p>Stay connected with the people who matter. Vedetor brings live location, safe zones, screen time, battery status and alerts into one calm family experience.</p></div></section>
+<section class="after"><div class="after-inner">
+        <div class="intro"><div><div class="eyebrow">A calmer kind of family protection</div><h2>Know they are safe.<br>Stay connected.</h2></div>
+        <p>Vedetor brings the important signals together without turning family life into a wall of data. The experience is built around the moments that matter: leaving, arriving, checking in and getting help when it is needed.</p></div>
+        <div class="features">
+        <article class="feature"><div class="icon">⌖</div><h3>Live Location</h3><p>See where a supervised device is and understand the journey without unnecessary noise.</p></article>
+        <article class="feature"><div class="icon">⌂</div><h3>Safe Zones</h3><p>Create meaningful places such as home, school or work and get useful arrival or departure signals.</p></article>
+        <article class="feature gold"><div class="icon">◷</div><h3>Screen Time</h3><p>Make device use visible and easier to discuss with the people you are protecting.</p></article>
+        <article class="feature gold"><div class="icon">!</div><h3>Alerts & Battery</h3><p>Important changes should stand out: alerts, low battery and other events that may need attention.</p></article>
+        </div>
+        <div class="cta"><div class="eyebrow">Vedetor</div><h2>Protection that feels like presence.</h2><p>One place for the signals that help families stay connected, with a simple experience for parents and supervised devices.</p><a class="btn primary" href="pricing.html">View plans</a></div>
+        </div></section>
 </main>
 <script>
 (function(){
-  const video=document.getElementById('heroVideo');
-  const hero=document.getElementById('hero');
-  const copy=document.getElementById('copy');
-  const bar=document.getElementById('bar');
-  const hint=document.getElementById('hint');
-  let target=0, current=0, ready=false, rafId=0;
-  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduced)return;
-
-  function getProgress(){
-    const r=hero.getBoundingClientRect();
-    const max=hero.offsetHeight-window.innerHeight;
-    return clamp(-r.top/Math.max(1,max),0,1);
-  }
-
-  function render(){
-    current += (target-current)*0.16;
-    if(Math.abs(target-current)<0.00015) current=target;
-    if(ready && video.duration){
-      const t=current*video.duration;
-      if(Math.abs(video.currentTime-t)>0.012){
-        video.currentTime=t;
-      }
-    }
-    bar.style.height=(current*100)+'%';
-    const reveal=clamp((current-.78)/.15,0,1);
-    copy.style.opacity=reveal;
-    copy.style.transform='translateY('+(18*(1-reveal))+'px)';
-    hint.style.opacity=String(1-clamp(current/.08,0,1));
-    rafId=requestAnimationFrame(render);
-  }
-
-  function onScroll(){target=getProgress();}
-  video.addEventListener('loadedmetadata',()=>{ready=true;video.currentTime=0;});
-  video.addEventListener('canplay',()=>{ready=true;});
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll,{passive:true});
-  onScroll();
-  render();
+ const video=document.getElementById('heroVideo'), hero=document.getElementById('hero'),
+ copy=document.getElementById('copy'), bar=document.getElementById('bar'), hint=document.getElementById('hint'),
+ labels=[...document.querySelectorAll('.scene-label')];
+ let target=0,current=0,ready=false,last=-1;
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ function get(){const r=hero.getBoundingClientRect(),m=Math.max(1,hero.offsetHeight-innerHeight);return clamp(-r.top/m,0,1)}
+ function scroll(){target=get()}
+ function raf(){
+   current+=(target-current)*.14;if(Math.abs(target-current)<.00012)current=target;
+   if(ready&&video.duration){const t=current*video.duration;if(Math.abs(t-last)>.018){video.currentTime=t;last=t}}
+   bar.style.height=(current*100)+'%';hint.style.opacity=1-clamp(current/.07,0,1);
+   const reveal=clamp((current-.79)/.13,0,1);copy.style.opacity=reveal;copy.style.transform='translateY('+(20*(1-reveal))+'px)';
+   labels.forEach((el,i)=>{const at=parseFloat(el.dataset.at),d=Math.abs(current-at),o=clamp(1-d/.075,0,1),dir=i%2===0?-1:1;el.style.opacity=o;el.style.transform=`translate3d(${dir*18*(1-o)}px,0,0)`});
+   requestAnimationFrame(raf);
+ }
+ video.addEventListener('loadedmetadata',()=>{ready=true;video.currentTime=0;last=0},{once:true});
+ video.addEventListener('canplay',()=>ready=true,{once:true});
+ addEventListener('scroll',scroll,{passive:true});addEventListener('resize',scroll,{passive:true});
+ scroll();requestAnimationFrame(raf);
 })();
 </script>
 </body>
