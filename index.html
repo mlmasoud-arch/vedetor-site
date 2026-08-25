@@ -96,6 +96,31 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .feature-track{transform:none!important}
 }
 </style>
+
+<style id="feature-image-fit-final">
+/* Feature artwork: the source WebP files are 9:16. Keep the frame at the same ratio so no empty side bands appear. */
+.visual{
+  width:min(40vw,420px);
+  height:auto !important;
+  aspect-ratio:9 / 16 !important;
+  top:46%;
+}
+.visual img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center;
+}
+@media (min-width:851px) and (max-width:1200px){
+  .visual{width:min(42vw,390px);height:auto !important;aspect-ratio:9 / 16 !important;top:45%;}
+}
+@media (max-width:850px){
+  .visual{width:min(88vw,390px);height:auto !important;aspect-ratio:9 / 16 !important;top:41%;}
+}
+@media (max-width:420px){
+  .visual{width:88vw;height:auto !important;aspect-ratio:9 / 16 !important;top:40%;}
+}
+</style>
 </head>
 <body><div class="floating-nav"><a class="nav-brand" href="#hero"><img src="assets/icon.png" alt="Vedetor"><span>VEDETOR</span></a><div class="nav-actions"><div class="lang-switch"><button id="langBtn" type="button" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.3 2.4 3.4 5.4 3.4 9s-1.1 6.6-3.4 9c-2.3-2.4-3.4-6.6-3.4-9S9.7 5.4 12 3Z"></path></svg><span id="langLabel">EN</span><b>⌄</b></button><div class="lang-menu" id="langMenu"><button type="button" data-lang="en"><span>EN</span>English</button><button type="button" data-lang="fa"><span>FA</span>فارسی</button><button type="button" data-lang="ar"><span>AR</span>العربية</button><button type="button" data-lang="es"><span>ES</span>Español</button><button type="button" data-lang="fr"><span>FR</span>Français</button><button type="button" data-lang="tr"><span>TR</span>Türkçe</button><button type="button" data-lang="zh"><span>ZH</span>中文</button><button type="button" data-lang="ru"><span>RU</span>Русский</button></div></div><a class="nav-cta" href="pricing.html" data-i18n="nav_cta">Get started</a></div></div>
 <main>
