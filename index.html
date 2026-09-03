@@ -6,6 +6,7 @@
 <title>Vedetor – Presence, Protection, Peace of Mind</title>
 <meta name="description" content="Vedetor helps families stay connected with live location, safe zones, alerts, battery status, screen time and emergency controls.">
 <meta name="theme-color" content="#02040a">
+<link rel="preload" as="image" href="assets/hero/hero-poster.jpg">
 <style>
 :root{--bg:#02040a;--panel:#070b13;--text:#f6f7fb;--muted:#98a3ba;--blue:#62adff;--gold:#d9ad62;--line:rgba(255,255,255,.09)}
 *{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}a{color:inherit}
@@ -234,11 +235,16 @@ html[dir="rtl"] .feature-scene .scene-copy:not(.right),html[dir="rtl"] .feature-
 }
 @media (max-width:420px){.hero .scene-label{bottom:6vh!important}.feature-scene .visual{width:88vw!important;top:40%!important}.feature-scene .scene-copy,.feature-scene .scene-copy.right{bottom:4vh!important}}
 </style>
+<style id="performance-pass">
+/* Keep below-the-fold rendering cheap without changing the visual design. */
+.message,.why,.how,.family,.privacy,.pricing,footer{content-visibility:auto;contain-intrinsic-size:1px 700px}
+.hero-video{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+</style>
 </head>
 <body><div class="floating-nav"><a class="nav-brand" href="#hero"><img src="assets/icon.png" alt="Vedetor"><span>VEDETOR</span></a><div class="nav-actions"><a class="nav-guide" href="#how-it-works" data-i18n="how_nav">How it works</a><div class="lang-switch"><button id="langBtn" type="button" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.3 2.4 3.4 5.4 3.4 9s-1.1 6.6-3.4 9c-2.3-2.4-3.4-6.6-3.4-9S9.7 5.4 12 3Z"></path></svg><span id="langLabel">EN</span><b>⌄</b></button><div class="lang-menu" id="langMenu"><button type="button" data-lang="en"><span>EN</span>English</button><button type="button" data-lang="fa"><span>FA</span>فارسی</button><button type="button" data-lang="ar"><span>AR</span>العربية</button><button type="button" data-lang="es"><span>ES</span>Español</button><button type="button" data-lang="fr"><span>FR</span>Français</button><button type="button" data-lang="tr"><span>TR</span>Türkçe</button><button type="button" data-lang="zh"><span>ZH</span>中文</button><button type="button" data-lang="ru"><span>RU</span>Русский</button></div></div><a class="nav-cta" href="pricing.html" data-i18n="nav_cta">Get started</a></div></div>
 <main>
 <section class="hero" id="hero"><div class="pin">
-<div class="video-wrap"><video id="heroVideo" class="hero-video" muted playsinline webkit-playsinline preload="auto" poster="assets/hero/hero-poster.jpg"><source src="assets/hero/vedetor-hero-web.mp4" type="video/mp4"></video></div><div class="shade"></div>
+<div class="video-wrap"><video id="heroVideo" class="hero-video" muted playsinline webkit-playsinline preload="metadata" poster="assets/hero/hero-poster.jpg"><source src="assets/hero/vedetor-hero-web.mp4" type="video/mp4"></video></div><div class="shade"></div>
 <div class="scene-label label-left" data-at="0.22"><div class="kicker" data-i18n="hero_connection">Connection</div><h3 data-i18n="hero_connection_h">Close, even when you’re apart.</h3><p data-i18n="hero_connection_p">Vedetor keeps the people who matter within reach.</p></div>
 <div class="scene-label label-right" data-at="0.38"><div class="kicker" data-i18n="hero_family">Family</div><h3 data-i18n="hero_family_h">One child. Two parents. One shared connection.</h3><p data-i18n="hero_family_p">Designed around presence, not constant surveillance.</p></div>
 <div class="scene-label label-left" data-at="0.54"><div class="kicker" data-i18n="hero_protection">Protection</div><h3 data-i18n="hero_protection_h">Know what matters.</h3><p data-i18n="hero_protection_p">Location, safe zones and alerts when they are useful.</p></div>
@@ -257,21 +263,21 @@ html[dir="rtl"] .feature-scene .scene-copy:not(.right),html[dir="rtl"] .feature-
 <div class="how-step"><span class="num">02 / ADD</span><h3 data-i18n="step2">Choose Add Device</h3><p data-i18n="step2_p">From the parent side, start a new device connection. Vedetor creates a temporary pairing request.</p></div>
 <div class="how-step"><span class="num">03 / PAIR</span><h3 data-i18n="step3">Scan or enter the code</h3><p data-i18n="step3_p">Use the QR code for a quick scan, or enter the six-digit code on the supervised device when requested.</p></div>
 <div class="how-step"><span class="num">04 / CONTROL</span><h3 data-i18n="step4">Start using Vedetor</h3><p data-i18n="step4_p">Once connected, the device appears in your dashboard. Use Normal for everyday supervision or Owner Device for deeper control.</p></div>
-</div><div class="pairing-card pairing-card-real"><img class="pairing-real-image" src="assets/Pairing_device.webp" alt="Vedetor Add Device pairing screen with QR code and six-digit pairing code" loading="lazy" decoding="async"></div></div>
+</div><div class="pairing-card pairing-card-real"><img class="pairing-real-image" src="assets/pairing-device.webp" alt="Vedetor Add Device pairing screen with QR code and six-digit pairing code" loading="lazy" decoding="async"></div></div>
 </div></section>
 
 <section class="feature-journey" id="featureJourney"><div class="feature-pin"><div class="feature-track" id="featureTrack">
-<article class="feature-scene scene-location"><span class="scene-no">01 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/Live-location.webp" alt="Vedetor Live Location visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="location">Live Location</div><h3 data-i18n="location_head">Know where they are.</h3><p data-i18n="location_p">Professional, real-time visibility into the supervised device.</p></div></article>
-<article class="feature-scene scene-sms"><span class="scene-no">02 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/internet-sms.webp" alt="Vedetor Internet + SMS Commands visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="sms">Internet + SMS Commands</div><h3 data-i18n="sms_head">Two paths. One connection.</h3><p data-i18n="sms_p">Send commands through the internet or SMS.</p></div></article>
-<article class="feature-scene scene-sound"><span class="scene-no">03 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/sound-control.webp" alt="Vedetor Complete Sound Control visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="sound">Complete Sound Control</div><h3 data-i18n="sound_head">Control every sound that matters.</h3><p data-i18n="sound_p">Ringtone, media, alarm and other device sounds — remotely.</p></div></article>
-<article class="feature-scene scene-status"><span class="scene-no">04 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/Device-status.webp" alt="Vedetor Live Device Status visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="status">Live Device Status</div><h3 data-i18n="status_head">See the device as it is now.</h3><p data-i18n="status_p">Battery, sound levels and other useful status signals at a glance.</p></div></article>
-<article class="feature-scene scene-finder"><span class="scene-no">05 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/phone-finder.webp" alt="Vedetor Find My Phone visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="finder">Find My Phone</div><h3 data-i18n="finder_head">Find it. Fast.</h3><p data-i18n="finder_p">Vibrate, flash the light or play a loud sound, even in silent mode.</p></div></article>
-<article class="feature-scene scene-advanced"><span class="scene-no">06 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/advanced-commands.webp" alt="Vedetor Advanced Commands visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="advanced">Advanced Commands</div><h3 data-i18n="advanced_head">Do more, from anywhere.</h3><p data-i18n="advanced_p">Remote actions such as screen control, app locking, camera actions and more.</p></div></article>
-<article class="feature-scene scene-owner"><span class="scene-no">07 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/owner-device.webp" alt="Vedetor Owner Device visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="owner">Owner Device</div><h3 data-i18n="owner_head">Maximum control.</h3><p data-i18n="owner_p">The advanced control layer for deeper device management.</p></div></article>
-<article class="feature-scene scene-dual"><span class="scene-no">08 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/dual-control.webp" alt="Vedetor Dual Control visual" loading="lazy" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="dual">Dual Control</div><h3 data-i18n="dual_head">Choose your level of control.</h3><p data-i18n="dual_p">Normal mode for everyday supervision. Owner Device for deeper control.</p></div></article>
+<article class="feature-scene scene-location"><span class="scene-no">01 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/Live-location.webp" data-feature-src="assets/features/Live-location.webp" loading="eager" alt="Vedetor Live Location visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="location">Live Location</div><h3 data-i18n="location_head">Know where they are.</h3><p data-i18n="location_p">Professional, real-time visibility into the supervised device.</p></div></article>
+<article class="feature-scene scene-sms"><span class="scene-no">02 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img src="assets/features/internet-sms.webp" data-feature-src="assets/features/internet-sms.webp" loading="eager" alt="Vedetor Internet + SMS Commands visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="sms">Internet + SMS Commands</div><h3 data-i18n="sms_head">Two paths. One connection.</h3><p data-i18n="sms_p">Send commands through the internet or SMS.</p></div></article>
+<article class="feature-scene scene-sound"><span class="scene-no">03 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/sound-control.webp" loading="lazy" alt="Vedetor Complete Sound Control visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="sound">Complete Sound Control</div><h3 data-i18n="sound_head">Control every sound that matters.</h3><p data-i18n="sound_p">Ringtone, media, alarm and other device sounds — remotely.</p></div></article>
+<article class="feature-scene scene-status"><span class="scene-no">04 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/Device-status.webp" loading="lazy" alt="Vedetor Live Device Status visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="status">Live Device Status</div><h3 data-i18n="status_head">See the device as it is now.</h3><p data-i18n="status_p">Battery, sound levels and other useful status signals at a glance.</p></div></article>
+<article class="feature-scene scene-finder"><span class="scene-no">05 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/phone-finder.webp" loading="lazy" alt="Vedetor Find My Phone visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="finder">Find My Phone</div><h3 data-i18n="finder_head">Find it. Fast.</h3><p data-i18n="finder_p">Vibrate, flash the light or play a loud sound, even in silent mode.</p></div></article>
+<article class="feature-scene scene-advanced"><span class="scene-no">06 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/advanced-commands.webp" loading="lazy" alt="Vedetor Advanced Commands visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="advanced">Advanced Commands</div><h3 data-i18n="advanced_head">Do more, from anywhere.</h3><p data-i18n="advanced_p">Remote actions such as screen control, app locking, camera actions and more.</p></div></article>
+<article class="feature-scene scene-owner"><span class="scene-no">07 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/owner-device.webp" loading="lazy" alt="Vedetor Owner Device visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="owner">Owner Device</div><h3 data-i18n="owner_head">Maximum control.</h3><p data-i18n="owner_p">The advanced control layer for deeper device management.</p></div></article>
+<article class="feature-scene scene-dual"><span class="scene-no">08 / 08</span><span class="scene-progress" data-i18n="feature_journey">FEATURE JOURNEY</span><div class="visual"><img data-feature-src="assets/features/dual-control.webp" loading="lazy" alt="Vedetor Dual Control visual" decoding="async"></div><div class="scene-copy"><div class="eyebrow" data-i18n="dual">Dual Control</div><h3 data-i18n="dual_head">Choose your level of control.</h3><p data-i18n="dual_p">Normal mode for everyday supervision. Owner Device for deeper control.</p></div></article>
 </div><div class="feature-counter"><span id="featureCurrent">01</span> / 08</div></div></section>
 
-<section class="family"><div class="family-inner"><div class="family-grid"><div><div class="eyebrow" data-i18n="family_ey">BUILT FOR FAMILIES</div><h2 data-i18n-html="family_h">Different places.<br>One presence.</h2><p data-i18n="family_p">A child can be at school, a parent can be at work and another family member can be somewhere else. Vedetor connects the important signals without making distance feel bigger.</p></div><div class="family-visual"><img class="family-presence-image" src="assets/family-presence.webp" alt="" loading="lazy" decoding="async"></div></div></div></section>
+<section class="family" id="family"><div class="family-inner"><div class="family-grid"><div><div class="eyebrow" data-i18n="family_ey">BUILT FOR FAMILIES</div><h2 data-i18n-html="family_h">Different places.<br>One presence.</h2><p data-i18n="family_p">A child can be at school, a parent can be at work and another family member can be somewhere else. Vedetor connects the important signals without making distance feel bigger.</p></div><div class="family-visual"><img class="family-presence-image" src="assets/family-presence.webp" alt="" loading="lazy" decoding="async"></div></div></div></section>
 
 <section class="privacy"><div class="privacy-inner"><div class="eyebrow" data-i18n="privacy_ey">PRIVACY</div><h2 data-i18n="privacy_h">Protection shouldn't come at the cost of privacy.</h2><p data-i18n="privacy_p">Vedetor should make it clear what information is used, why it is used and who can access it.</p><div class="pill" data-i18n="privacy_pill">Privacy first. Always.</div></div></section>
 
@@ -296,9 +302,32 @@ html[dir="rtl"] .feature-scene .scene-copy:not(.right),html[dir="rtl"] .feature-
 (function(){
  const s=document.getElementById('featureJourney'),t=document.getElementById('featureTrack'),c=document.getElementById('featureCurrent');
  if(!s||!t)return;
- let raf=0;
+ const media=[...t.querySelectorAll('img[data-feature-src]')];
+ let raf=0,lastIndex=-1;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
- function update(){raf=0;const r=s.getBoundingClientRect(),m=Math.max(1,s.offsetHeight-innerHeight),p=clamp(-r.top/m,0,1),max=Math.max(0,t.scrollWidth-innerWidth);t.style.transform='translate3d('+(-max*p)+'px,0,0)';if(c)c.textContent=String(Math.min(8,Math.max(1,Math.floor(p*8)+1))).padStart(2,'0')}
+ function loadMedia(img){
+   if(!img.dataset.loaded){img.src=img.dataset.featureSrc;img.dataset.loaded='1';}
+ }
+ function unloadMedia(img){
+   if(img.dataset.loaded && img.src){img.removeAttribute('src');img.dataset.loaded='';}
+ }
+ function syncMedia(index){
+   if(index===lastIndex)return;
+   lastIndex=index;
+   media.forEach((img,i)=>{
+     const distance=Math.abs(i-index);
+     if(distance<=1) loadMedia(img);
+     else if(distance>=3) unloadMedia(img);
+   });
+ }
+ function update(){
+   raf=0;
+   const r=s.getBoundingClientRect(),m=Math.max(1,s.offsetHeight-innerHeight),p=clamp(-r.top/m,0,1),max=Math.max(0,t.scrollWidth-innerWidth);
+   t.style.transform='translate3d('+(-max*p)+'px,0,0)';
+   const index=Math.min(7,Math.max(0,Math.floor(p*8)));
+   syncMedia(index);
+   if(c)c.textContent=String(index+1).padStart(2,'0');
+ }
  function schedule(){if(!raf)raf=requestAnimationFrame(update)}
  addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});schedule();
 })();
