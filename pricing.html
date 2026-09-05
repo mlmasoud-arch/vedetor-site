@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vedetor Pricing – Free, Personal & Business Plans</title>
-<meta name="description" content="Compare Vedetor plans and choose the right level of family safety and remote device control.">
+<title>Pricing — Vedetor</title>
+<meta name="description" content="Vedetor plans: Free, Personal and Business — simple, transparent, no hidden fees.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg-0:#0a0e14; --bg-1:#0f141d; --bg-2:#141a24;
@@ -115,7 +115,21 @@ html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
   50%{ box-shadow:0 0 0 7px #f4c44e00, 0 4px 20px -2px #f4c44eaa; }
 }
 </style>
-<link rel="canonical" href="https://vedetor.com/pricing.html"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"></head>
+<meta name="robots" content="index,follow"><meta name="description" content="Vedetor pricing plans for family device monitoring and protection."><link rel="canonical" href="https://vedetor.com/pricing.html"><link rel="alternate" hreflang="en" href="https://vedetor.com/pricing.html">
+<script src="analytics-config.js"></script><script>(function(){const id=(window.VEDETOR_GA_ID||'').trim();if(!/^G-[A-Z0-9]+$/i.test(id))return;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(id);document.head.appendChild(s);gtag('js',new Date());gtag('config',id,{send_page_view:true});window.veTrack=function(n,p){try{gtag('event',n,p||{})}catch(e){}};})();</script>
+<style id="pricing-typography-final">
+html[lang="fa"] body{font-family:'Vazirmatn',Inter,system-ui,sans-serif;line-height:1.95}
+html[lang="ar"] body{font-family:'Vazirmatn','Noto Sans Arabic',Inter,system-ui,sans-serif;line-height:1.9}
+html[lang="zh"] body{font-family:'Noto Sans SC',Inter,system-ui,sans-serif;line-height:1.75}
+html[lang="fa"] h1,html[lang="fa"] h2,html[lang="fa"] h3,html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="zh"] h1,html[lang="zh"] h2,html[lang="zh"] h3{letter-spacing:0;line-height:1.25}
+html[lang="fa"] .page-head h1,html[lang="ar"] .page-head h1{font-size:clamp(2rem,5vw,3rem);font-weight:800}
+html[lang="fa"] .plan-name,html[lang="ar"] .plan-name{font-weight:800}
+html[lang="fa"] .plan-desc,html[lang="ar"] .plan-desc,html[lang="fa"] .plan-features,html[lang="ar"] .plan-features,html[lang="fa"] .faq-item p,html[lang="ar"] .faq-item p{line-height:1.95}
+@media(max-width:880px){.plan{padding:28px 24px}.section{padding:76px 0}.wrap{padding:0 18px}}
+</style>
+<link rel="manifest" href="site.webmanifest">
+<meta name="generator" content="Vedetor static site">
+</head>
 <body>
 
 <nav>
@@ -123,9 +137,9 @@ html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
     <div class="logo"><img src="assets/icon.png" alt="Vedetor" class="logo-img">
  Vedetor</div>
     <div class="nav-links">
-      <a href="index.html#features" data-i18n="nav.features">Features</a>
-      <a href="index.html#audience" data-i18n="nav.audience">Who it's for</a>
-      <a href="index.html#tutorial" data-i18n="nav.tutorial">Getting started</a>
+      <a href="index.html#featureJourney" data-i18n="nav.features">Features</a>
+      <a href="index.html#family" data-i18n="nav.audience">Who it's for</a>
+      <a href="index.html#how-it-works" data-i18n="nav.tutorial">Getting started</a>
       <a href="pricing.html" data-i18n="nav.pricing">Pricing</a>
       <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
     </div>
@@ -138,7 +152,8 @@ html[dir="rtl"] .toggle.on .knob{transform:translateX(-26px);}
 <button data-lang="tr" class="">Türkçe</button>
 <button data-lang="es" class="">Español</button>
 <button data-lang="zh" class="">中文</button>
-<button data-lang="fr" class="">Français</button></div>
+<button data-lang="fr" class="">Français</button>
+ <button data-lang="ru" class="">Русский</button></div>
       </div>
       <a href="index.html" class="nav-cta" data-i18n="nav.home">Home</a>
     </div>
@@ -656,5 +671,5 @@ function toggleBilling(){
 }
 </script>
 
-</body>
+<script>document.querySelectorAll('.plan-cta,.nav-cta').forEach(a=>a.addEventListener('click',()=>window.veTrack&&veTrack('pricing_cta_click',{text:(a.textContent||'').trim()})));</script></body>
 </html>
